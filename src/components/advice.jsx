@@ -1,18 +1,18 @@
 import React, { Component } from 'react';
 import http from '../services/httpService';
-import config from '../services/config';
+import config from '../config/config';
 
 class Advice extends Component {
   state = {
     advice: [],
     user: '',
     resource: '',
-    message: ''
+    message: []
   };
 
   async componentDidMount() {
-    const res = await http.get(config.serverUrl);
-    console.log(res.data);
+    const uid = this.props.match.params.id;
+    const res = await http.get(`${config.serverUrl}\\${uid}`);
     const { advice, user, resource, message } = res.data;
     this.setState({ advice, user, resource, message });
   }
@@ -24,11 +24,16 @@ class Advice extends Component {
     ) : (
       <div className='container'>
         <h1>Welcome {user}!</h1>
-        <span>
-          Thanks for your message from {resource}, you asked: "{message}"{' '}
-        </span>
+        <h2>
+          Thanks for your message from {resource}, here is your messages
+          history: "
+          {message.map((msg, idx) => (
+            <h1 key={idx}>{msg}</h1>
+          ))}
+          "{' '}
+        </h2>
         <h1 className='advice'>
-          Our Advice to you is:
+          Here's a free advice for now:
           {advice.map((el, i) => (
             <p key={i}>{el}</p>
           ))}
