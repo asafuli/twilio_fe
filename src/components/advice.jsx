@@ -20,7 +20,7 @@ class Advice extends Component {
 
   getMessages = async () => {
     const uid = this.props.match.params.id;
-    const res = await http.post(`${config.serverUrl}\\user\\${uid}`);
+    const res = await http.get(`${config.serverUrl}\\user\\${uid}`);
     const { advice, user, resource, message } = res.data;
     console.log(message);
     this.setState({ advice, user, resource, message });
