@@ -1,3 +1,3 @@
 export default {
-  serverUrl: 'http://4edb7ce7.ngrok.io'
+  serverUrl: 'http://the-black-forest-x-be.herokuapp.com/'
 };
