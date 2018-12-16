@@ -3336,3 +3336,7 @@ body:after {
     background-position: 100% 60%;
   }
 }
+
+.nav-container {
+  margin: 0 0 40px 0;
+}
