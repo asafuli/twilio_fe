@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import http from '../services/httpService';
 import config from '../config/config';
-import ButtonAppBar from './buttonAppBar';
+import NavBar from './navbar';
 
 class Advice extends Component {
   state = {
@@ -46,7 +46,7 @@ class Advice extends Component {
       <h1>Loading...</h1>
     ) : (
       <div className='container'>
-        <ButtonAppBar />
+        <NavBar />
         <header id='header'>
           <div className='logo'>
             <h1 className='animated'>Welcome {user}!</h1>
