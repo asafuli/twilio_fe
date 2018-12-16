@@ -3316,6 +3316,15 @@ body:after {
   -webkit-animation: moveBg 90s linear infinite;
 }
 
+.animated-timer {
+  background: url('../../images/timer-bg.png');
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  animation: moveBg 90s linear infinite;
+  -webkit-animation: moveBg 90s linear infinite;
+}
+
 /*Text background animation*/
 @keyframes moveBg {
   0% {

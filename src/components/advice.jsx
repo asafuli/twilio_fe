@@ -59,8 +59,11 @@ class Advice extends Component {
               <header className='special'>
                 <h1>
                   {' '}
-                  Only {this.state.secondsToFlight} seconds left until your
-                  Black forest experience...
+                  Only{' '}
+                  <span className='animated-timer'>
+                    {this.state.secondsToFlight}
+                  </span>{' '}
+                  seconds left until your Black forest experience...
                 </h1>
                 <h1>
                   {' '}
