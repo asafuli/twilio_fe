@@ -9,6 +9,10 @@ class App extends Component {
         <header className='App-header'>
           <Switch>
             <Route exact path='/user/:id' component={Advice} />
+            <Route exact path='/flight' component={Flight} />
+            <Route exact path='/accomodation' component={Flight} />
+            <Route exact path='/map' component={Flight} />
+            <Route exact path='/info' component={Flight} />
           </Switch>
         </header>
       </div>
