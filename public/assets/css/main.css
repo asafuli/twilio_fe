@@ -3308,6 +3308,7 @@ body:after {
 }
 
 .animated {
+  font-size: 2rem;
   background: url('../../images/text-bg.png');
   background-clip: text;
   -webkit-background-clip: text;
@@ -3317,6 +3318,7 @@ body:after {
 }
 
 .animated-timer {
+  font-size: 1.95rem;
   background: url('../../images/timer-bg.png');
   background-clip: text;
   -webkit-background-clip: text;
