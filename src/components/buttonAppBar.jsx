@@ -7,33 +7,39 @@ import Typography from '@material-ui/core/Typography';
 import Button from '@material-ui/core/Button';
 import IconButton from '@material-ui/core/IconButton';
 import MenuIcon from '@material-ui/icons/Menu';
+import color from '@material-ui/core/colors/indigo';
 
 const styles = {
   root: {
     flexGrow: 1,
+    color: brown
   },
   grow: {
-    flexGrow: 1,
+    flexGrow: 1
   },
   menuButton: {
-    marginLeft: -12,
-    marginRight: 20,
-  },
+    marginLeft: 0,
+    marginRight: 0
+  }
 };
 
 function ButtonAppBar(props) {
   const { classes } = props;
   return (
     <div className={classes.root}>
-      <AppBar position="static">
+      <AppBar position='static'>
         <Toolbar>
-          <IconButton className={classes.menuButton} color="inherit" aria-label="Menu">
+          <IconButton
+            className={classes.menuButton}
+            color='inherit'
+            aria-label='Menu'
+          >
             <MenuIcon />
           </IconButton>
-          <Typography variant="h6" color="inherit" className={classes.grow}>
-            News
+          <Typography variant='h6' color='inherit' className={classes.grow}>
+            Flight details
           </Typography>
-          <Button color="inherit">Login</Button>
+          <Button color='inherit'>Login</Button>
         </Toolbar>
       </AppBar>
     </div>
@@ -41,7 +47,7 @@ function ButtonAppBar(props) {
 }
 
 ButtonAppBar.propTypes = {
-  classes: PropTypes.object.isRequired,
+  classes: PropTypes.object.isRequired
 };
 
 export default withStyles(styles)(ButtonAppBar);
