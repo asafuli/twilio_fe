@@ -22,22 +22,22 @@ const NavBar = props => {
         <div className='collapse navbar-collapse' id='navbarNav'>
           <ul className='navbar-nav'>
             <li className='nav-item active'>
-              <NavLink classNameName='nav-link' to='/flight'>
+              <NavLink className='nav-link' to='/flight'>
                 Flight
               </NavLink>
             </li>
             <li className='nav-item'>
-              <NavLink classNameName='nav-link' to='/accomodation'>
+              <NavLink className='nav-link' to='/accomodation'>
                 Accomodation
               </NavLink>
             </li>
             <li className='nav-item'>
-              <NavLink classNameName='nav-link' to='/map'>
+              <NavLink className='nav-link' to='/map'>
                 Map
               </NavLink>
             </li>
             <li className='nav-item'>
-              <NavLink classNameName='nav-link' to='/info'>
+              <NavLink className='nav-link' to='/info'>
                 Useful info
               </NavLink>
             </li>
