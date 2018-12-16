@@ -4,12 +4,12 @@ import { Link, NavLink } from 'react-router-dom';
 const NavBar = props => {
   return (
     <div className='nav-container'>
-      <nav class='navbar navbar-expand-lg navbar-dark bg-dark'>
-        <a class='navbar-brand' href='#'>
+      <nav className='navbar navbar-expand-lg navbar-dark bg-dark'>
+        <a className='navbar-brand' href='#'>
           Navbar
         </a>
         <button
-          class='navbar-toggler'
+          className='navbar-toggler'
           type='button'
           data-toggle='collapse'
           data-target='#navbarNav'
@@ -17,27 +17,27 @@ const NavBar = props => {
           aria-expanded='false'
           aria-label='Toggle navigation'
         >
-          <span class='navbar-toggler-icon' />
+          <span className='navbar-toggler-icon' />
         </button>
-        <div class='collapse navbar-collapse' id='navbarNav'>
-          <ul class='navbar-nav'>
-            <li class='nav-item active'>
-              <NavLink className='nav-link' to='/flight'>
+        <div className='collapse navbar-collapse' id='navbarNav'>
+          <ul className='navbar-nav'>
+            <li className='nav-item active'>
+              <NavLink classNameName='nav-link' to='/flight'>
                 Flight
               </NavLink>
             </li>
-            <li class='nav-item'>
-              <NavLink className='nav-link' to='/accomodation'>
+            <li className='nav-item'>
+              <NavLink classNameName='nav-link' to='/accomodation'>
                 Accomodation
               </NavLink>
             </li>
-            <li class='nav-item'>
-              <NavLink className='nav-link' to='/map'>
+            <li className='nav-item'>
+              <NavLink classNameName='nav-link' to='/map'>
                 Map
               </NavLink>
             </li>
-            <li class='nav-item'>
-              <NavLink className='nav-link' to='/info'>
+            <li className='nav-item'>
+              <NavLink classNameName='nav-link' to='/info'>
                 Useful info
               </NavLink>
             </li>
