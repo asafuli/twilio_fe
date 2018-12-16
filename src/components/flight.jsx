@@ -8,7 +8,7 @@ const mapStyles = {
 
 export class Flight extends Component {
   render() {
-    console.log(process.env.MAPS_API_KEY);
+    console.log(process.env);
     return (
       <Map
         google={this.props.google}
