@@ -3328,9 +3328,9 @@ body:after {
 /*Text background animation*/
 @keyframes moveBg {
   0% {
-    background-position: 0% 30%;
+    background-position: 0% 10%;
   }
   100% {
-    background-position: 100% 50%;
+    background-position: 100% 60%;
   }
 }
