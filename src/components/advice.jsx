@@ -47,7 +47,7 @@ class Advice extends Component {
       <div className='container'>
         <header id='header'>
           <div className='logo'>
-            <h2>Welcome {user}!</h2>
+            <h2 className='animated'>Welcome {user}!</h2>
           </div>
         </header>
         <section id='main'>
