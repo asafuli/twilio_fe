@@ -21,5 +21,5 @@ export class Flight extends Component {
 }
 
 export default GoogleApiWrapper({
-  apikey: `${process.env.MAPS_API_KEY}`
+  apikey: process.env.MAPS_API_KEY
 })(Flight);
