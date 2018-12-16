@@ -8,11 +8,12 @@ const mapStyles = {
 
 export class Flight extends Component {
   render() {
+    console.log(process.env.MAPS_API_KEY);
     return (
       <Map
         google={this.props.google}
         style={mapStyles}
-        zoom={14}
+        zoom={9}
         initialCenter={{ lat: -1.23, lng: 36.2 }}
       />
     );
