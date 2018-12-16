@@ -12,7 +12,14 @@ import color from '@material-ui/core/colors/indigo';
 const styles = {
   root: {
     flexGrow: 1,
-    color: brown
+    palette: {
+      primary: {
+        main: '#ffd180'
+      },
+      secondary: {
+        main: '#82b1ff'
+      }
+    }
   },
   grow: {
     flexGrow: 1
