@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { Route, Switch, Redirect } from 'react-router-dom';
 import Advice from './components/advice';
 import Flight from './components/flight';
+import { GoogleApiWrapper } from 'google-maps-react';
 
 class App extends Component {
   render() {
@@ -11,7 +12,7 @@ class App extends Component {
           <Switch>
             <Route exact path='/user/:id' component={Advice} />
             <Route exact path='/flight' component={Flight} />
-            <Route exact path='/accomodation' component={Flight} />
+            <Route exact path='/accomodation' component={GoogleApiWrapper} />
             <Route exact path='/map' component={Flight} />
             <Route exact path='/info' component={Flight} />
           </Switch>
