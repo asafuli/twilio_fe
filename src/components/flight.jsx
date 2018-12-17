@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { Component, Fragment } from 'react';
 import {
   withScriptjs,
   withGoogleMap,
@@ -22,16 +22,18 @@ const MyMapComponent = withScriptjs(
 
 const Flight = props => {
   return (
-    <Tracker />
-    <MyMapComponent
-      isMarkerShown
-      googleMapURL={`https://maps.googleapis.com/maps/api/js?key=${
-        process.env.REACT_APP_MAPS_API_KEY
-      }&v=3.exp&libraries=geometry,drawing,places`}
-      loadingElement={<div style={{ height: `100%` }} />}
-      containerElement={<div style={{ height: `600px` }} />}
-      mapElement={<div style={{ height: `100%` }} />}
-    />
+    <React.Fragment>
+      <Tracker />
+      <MyMapComponent
+        isMarkerShown
+        googleMapURL={`https://maps.googleapis.com/maps/api/js?key=${
+          process.env.REACT_APP_MAPS_API_KEY
+        }&v=3.exp&libraries=geometry,drawing,places`}
+        loadingElement={<div style={{ height: `100%` }} />}
+        containerElement={<div style={{ height: `600px` }} />}
+        mapElement={<div style={{ height: `100%` }} />}
+      />
+    </React.Fragment>
   );
 };
 
