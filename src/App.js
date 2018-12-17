@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import { Route, Switch, Redirect } from 'react-router-dom';
 import Advice from './components/advice';
 import Flight from './components/flight';
-import { GoogleApiWrapper } from 'google-maps-react';
 
 class App extends Component {
   render() {
