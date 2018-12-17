@@ -1,4 +1,4 @@
-import React, { Component, Fragment } from 'react';
+import React from 'react';
 import {
   withScriptjs,
   withGoogleMap,
@@ -22,7 +22,7 @@ const MyMapComponent = withScriptjs(
 
 const Flight = props => {
   return (
-    <React.Fragment>
+    <div className='flight-container'>
       <Tracker />
       <MyMapComponent
         isMarkerShown
@@ -33,7 +33,7 @@ const Flight = props => {
         containerElement={<div style={{ height: `600px` }} />}
         mapElement={<div style={{ height: `100%` }} />}
       />
-    </React.Fragment>
+    </div>
   );
 };
 
