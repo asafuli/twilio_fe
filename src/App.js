@@ -8,6 +8,7 @@ class App extends Component {
     return (
       <div className='App'>
         <header className='App-header'>
+          <NavBar />
           <Switch>
             <Route exact path='/user/:id' component={Advice} />
             <Route exact path='/flight' component={Flight} />
