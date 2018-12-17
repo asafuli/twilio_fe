@@ -5,6 +5,7 @@ import {
   GoogleMap,
   Marker
 } from 'react-google-maps';
+import Tracker from './flightTracker';
 
 const MyMapComponent = withScriptjs(
   withGoogleMap(props => (
@@ -21,6 +22,7 @@ const MyMapComponent = withScriptjs(
 
 const Flight = props => {
   return (
+    <Tracker />
     <MyMapComponent
       isMarkerShown
       googleMapURL={`https://maps.googleapis.com/maps/api/js?key=${
