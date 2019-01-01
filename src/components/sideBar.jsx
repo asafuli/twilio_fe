@@ -4,6 +4,7 @@ import styled from 'styled-components';
 const StyledPinsList = styled.ul`
   color: palevioletred;
   font-weight: bold;
+  list-style-type: none;
 `;
 
 const StyledPinsItem = styled.li`

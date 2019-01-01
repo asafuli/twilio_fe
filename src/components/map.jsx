@@ -6,6 +6,7 @@ import {
   Marker
 } from 'react-google-maps';
 import SideBar from './sideBar';
+import styled from 'styled-components';
 
 const MyMapComponent = withScriptjs(
   withGoogleMap(props => (
@@ -19,6 +20,10 @@ const MyMapComponent = withScriptjs(
     </GoogleMap>
   ))
 );
+
+const styledSideBar = styled.SideBar`
+  background: green;
+`;
 
 const Map = props => {
   return (
