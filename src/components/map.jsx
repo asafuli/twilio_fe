@@ -6,6 +6,7 @@ import {
   GoogleMap,
   Marker
 } from 'react-google-maps';
+import MapMarkers from './mapMarkers';
 
 const MyMapComponent = withScriptjs(
   withGoogleMap(props => (
@@ -23,6 +24,7 @@ const MyMapComponent = withScriptjs(
 const Map = props => {
   return (
     <div className='map-container'>
+      <MapMarkers />
       <MyMapComponent
         isMarkerShown
         googleMapURL={`https://maps.googleapis.com/maps/api/js?key=${
