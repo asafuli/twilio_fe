@@ -16,9 +16,9 @@ const StyledPinsItem = styled.li`
   border-radius: 3px;
 `;
 
-const SideBar = () => {
+const SideBar = ({ className }) => {
   return (
-    <StyledPinsList className='MapMarkers'>
+    <StyledPinsList className={className}>
       <StyledPinsItem>Accomodation</StyledPinsItem>
       <StyledPinsItem>Europe park</StyledPinsItem>
       <StyledPinsItem>Lake titisie</StyledPinsItem>
