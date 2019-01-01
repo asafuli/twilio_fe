@@ -1,12 +1,11 @@
 import React from 'react';
-import InfoBox from 'react-google-maps/lib/components/addons/InfoBox';
 import {
   withScriptjs,
   withGoogleMap,
   GoogleMap,
   Marker
 } from 'react-google-maps';
-import MapMarkers from './mapMarkers';
+import SideBar from './sideBar';
 
 const MyMapComponent = withScriptjs(
   withGoogleMap(props => (
@@ -24,7 +23,7 @@ const MyMapComponent = withScriptjs(
 const Map = props => {
   return (
     <div className='map-container'>
-      <MapMarkers />
+      <SideBar />
       <MyMapComponent
         isMarkerShown
         googleMapURL={`https://maps.googleapis.com/maps/api/js?key=${
