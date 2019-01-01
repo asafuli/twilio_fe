@@ -6,7 +6,6 @@ import {
   GoogleMap,
   Marker
 } from 'react-google-maps';
-import Tracker from './flightTracker';
 
 const MyMapComponent = withScriptjs(
   withGoogleMap(props => (
@@ -21,10 +20,9 @@ const MyMapComponent = withScriptjs(
   ))
 );
 
-const Flight = props => {
+const Map = props => {
   return (
-    <div className='flight-container'>
-      <Tracker />
+    <div className='map-container'>
       <MyMapComponent
         isMarkerShown
         googleMapURL={`https://maps.googleapis.com/maps/api/js?key=${
@@ -38,4 +36,4 @@ const Flight = props => {
   );
 };
 
-export default Flight;
+export default Map;

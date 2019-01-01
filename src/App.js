@@ -3,6 +3,7 @@ import { Route, Switch, Redirect } from 'react-router-dom';
 import Advice from './components/advice';
 import Flight from './components/flight';
 import NavBar from './components/navbar';
+import Map from './components/map';
 
 class App extends Component {
   render() {
@@ -14,7 +15,7 @@ class App extends Component {
             <Route exact path='/user/:id' component={Advice} />
             <Route exact path='/flight' component={Flight} />
             <Route exact path='/accomodation' component={Flight} />
-            <Route exact path='/map' component={Flight} />
+            <Route exact path='/map' component={Map} />
             <Route exact path='/info' component={Flight} />
           </Switch>
         </header>
