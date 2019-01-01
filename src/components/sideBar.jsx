@@ -18,7 +18,6 @@ const StyledPinsItem = styled.li`
 
 const SideBar = ({ className }) => {
   return (
-    <h1 className={className}></h1>
     <StyledPinsList className={className}>
       <StyledPinsItem>Accomodation</StyledPinsItem>
       <StyledPinsItem>Europe park</StyledPinsItem>

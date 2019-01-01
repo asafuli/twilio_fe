@@ -21,7 +21,7 @@ const MyMapComponent = withScriptjs(
   ))
 );
 
-const styledSideBar = styled.(SideBar)`
+const styledSideBar = styled(SideBar)`
   background: green;
 `;
 
