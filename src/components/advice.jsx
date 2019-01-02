@@ -28,7 +28,7 @@ class Advice extends Component {
   };
 
   toggleShowMsg = () => {
-    this.getMessages();
+    //this.getMessages();
     this.setState({ showMessages: !this.state.showMessages });
   };
 
