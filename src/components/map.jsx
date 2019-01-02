@@ -11,6 +11,7 @@ import styled from 'styled-components';
 const MyMapComponent = withScriptjs(
   withGoogleMap(props => (
     <GoogleMap
+      className={props.className}
       defaultZoom={10}
       defaultCenter={{ lat: 47.9429235, lng: 8.4708546 }}
     >
@@ -21,15 +22,21 @@ const MyMapComponent = withScriptjs(
   ))
 );
 
+const StyledMapComponent = styled(MyMapComponent)`
+  width: 200px;
+  height: 200px;
+  float: right;
+`;
+
 const StyledSideBar = styled(SideBar)`
-  background: green;
+  float: left;
 `;
 
 const Map = props => {
   return (
     <div className='map-container'>
       <StyledSideBar />
-      <MyMapComponent
+      <SyledMapComponent
         isMarkerShown
         googleMapURL={`https://maps.googleapis.com/maps/api/js?key=${
           process.env.REACT_APP_MAPS_API_KEY
