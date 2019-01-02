@@ -1,4 +1,5 @@
 import http from './httpService';
+import config from '../config/config';
 
 export async function getUserInfo(uid) {
   const res = await http.get(`${config.serverUrl}\\user\\${uid}`);
