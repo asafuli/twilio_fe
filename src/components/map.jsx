@@ -24,7 +24,7 @@ const MyMapComponent = withScriptjs(
 
 const StyledMapComponent = styled(MyMapComponent)`
   width: 200px;
-  height: 200px;
+  height: 260px;
   float: right;
 `;
 

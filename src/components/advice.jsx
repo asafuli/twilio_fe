@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import http from '../services/httpService';
+import getMessages from '../services/userService';
 import config from '../config/config';
 
 class Advice extends Component {
@@ -13,18 +13,12 @@ class Advice extends Component {
   };
 
   async componentDidMount() {
-    this.getMessages();
+    const uid = this.props.match.params.id;
+    const userInfo = this.getUserInfo(uid);
+    this.setState(userInfo);
     const targetDate = new Date(2019, 4, 13, 12, 0, 0);
     setInterval(this.countdown, 1000, targetDate);
   }
-
-  getMessages = async () => {
-    const uid = this.props.match.params.id;
-    const res = await http.get(`${config.serverUrl}\\user\\${uid}`);
-    const { advice, user, resource, message } = res.data;
-    console.log(message);
-    this.setState({ advice, user, resource, message });
-  };
 
   countdown = targetDate => {
     const currentDate = new Date();

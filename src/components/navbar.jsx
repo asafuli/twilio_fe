@@ -1,13 +1,12 @@
 import React from 'react';
 import { Link, NavLink } from 'react-router-dom';
 
-
 const NavBar = props => {
   return (
     <div className='nav-container'>
       <nav className='navbar navbar-expand-lg navbar-dark bg-dark'>
         <a className='navbar-brand' href='#'>
-          Navbar
+          My list
         </a>
         <button
           className='navbar-toggler'
@@ -40,6 +39,11 @@ const NavBar = props => {
             <li className='nav-item'>
               <NavLink className='nav-link' to='/info'>
                 Useful info
+              </NavLink>
+            </li>
+            <li className='nav-item'>
+              <NavLink className='nav-link' to='/info'>
+                My links
               </NavLink>
             </li>
           </ul>
