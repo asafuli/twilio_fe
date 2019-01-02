@@ -27,8 +27,9 @@ class Advice extends Component {
     this.setState({ secondsToFlight });
   };
 
-  toggleShowMsg = () => {
-    //this.getMessages();
+  toggleShowMsg = async () => {
+    const uid = this.props.match.params.id;
+    await getUserInfo(uid);
     this.setState({ showMessages: !this.state.showMessages });
   };
 
