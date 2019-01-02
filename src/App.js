@@ -5,13 +5,15 @@ import Flight from './components/flight';
 import NavBar from './components/navbar';
 import Map from './components/map';
 import { getCurrentUser } from './services/userService';
+import PersonalInfo from './components/PersonalInfo';
 
 class App extends Component {
   state = {};
 
   componentDidMount = () => {
     const pathArray = window.location.pathname.split('/');
-    this.setState({ uid: pathArray[1] });
+    console.log(pathArray);
+    this.setState({ uid: pathArray[2] });
   };
 
   render() {
@@ -25,6 +27,11 @@ class App extends Component {
             <Route exact path='/accomodation' component={Flight} />
             <Route exact path='/map' component={Map} />
             <Route exact path='/info' component={Flight} />
+            <Route
+              exact
+              path='/myList'
+              render={props => <PersonalInfo {...props} uid={uid} />}
+            />
           </Switch>
         </header>
       </div>

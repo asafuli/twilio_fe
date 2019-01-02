@@ -1,7 +1,7 @@
 import React from 'react';
 
-const PersonalInfo = () => {
-  return null;
+const PersonalInfo = ({ uid }) => {
+  return <p>{uid}</p>;
 };
 
 export default PersonalInfo;
