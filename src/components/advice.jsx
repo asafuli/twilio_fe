@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
-import getUserInfo from '../services/userService';
-import config from '../config/config';
+import { getUserInfo } from '../services/userService';
 
 class Advice extends Component {
   state = {
