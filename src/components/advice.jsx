@@ -71,13 +71,26 @@ class Advice extends Component {
               {this.state.showMessages ? (
                 <div className='content'>
                   <ul>
-                    {message.map((msg, idx) => (
-                      <div key={idx}>
-                        <li>
-                          <strong>{msg}</strong>
-                        </li>{' '}
-                      </div>
-                    ))}
+                    {message.map((msg, idx) => {
+                      if (msg.includes('Link')) {
+                        return (
+                          <div key={idx}>
+                            <li>
+                              <strong>
+                                <a href={msg}>{msg}</a>
+                              </strong>
+                            </li>{' '}
+                          </div>
+                        );
+                      } else
+                        return (
+                          <div key={idx}>
+                            <li>
+                              <strong>{msg}</strong>
+                            </li>{' '}
+                          </div>
+                        );
+                    })}
                   </ul>
                 </div>
               ) : (
