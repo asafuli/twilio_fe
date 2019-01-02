@@ -9,10 +9,10 @@ import { getCurrentUser } from './services/userService';
 class App extends Component {
   state = {};
 
-  // componentDidMount = () => {
-  //   const uid = this.props.match.params.id;
-  //   this.setState({ uid });
-  // };
+  componentDidMount = () => {
+    const pathArray = window.location.pathname.split('/');
+    this.setState({ uid: pathArray[1] });
+  };
 
   render() {
     return (
