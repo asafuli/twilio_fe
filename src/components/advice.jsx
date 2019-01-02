@@ -30,7 +30,7 @@ class Advice extends Component {
   toggleShowMsg = async () => {
     const uid = this.props.match.params.id;
     const userInfo = await getUserInfo(uid);
-    this.setState(...userInfo, { showMessages: !this.state.showMessages });
+    this.setState({ ...userInfo, showMessages: !this.state.showMessages });
   };
 
   render() {
