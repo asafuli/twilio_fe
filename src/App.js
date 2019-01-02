@@ -30,7 +30,7 @@ class App extends Component {
             <Route
               exact
               path='/myList'
-              render={props => <PersonalInfo {...props} uid={uid} />}
+              render={props => <PersonalInfo {...props} uid={this.state.uid} />}
             />
           </Switch>
         </header>
