@@ -9,12 +9,12 @@ import { getCurrentUser } from './services/userService';
 class App extends Component {
   state = {};
 
-  render() {
-    componentDidMount = () => {
-      const uid = this.props.match.params.id;
-      this.setState({ uid });
-    };
+  componentDidMount = () => {
+    const uid = this.props.match.params.id;
+    this.setState({ uid });
+  };
 
+  render() {
     return (
       <div className='App'>
         <header className='App-header'>
