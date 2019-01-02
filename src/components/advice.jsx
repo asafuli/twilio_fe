@@ -72,7 +72,7 @@ class Advice extends Component {
                 <div className='content'>
                   <ul>
                     {message.map((msg, idx) => {
-                      if (msg.includes('Link')) {
+                      if (msg.toLowerCase().includes('www')) {
                         return (
                           <div key={idx}>
                             <li>
