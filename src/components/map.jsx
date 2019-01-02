@@ -21,14 +21,14 @@ const MyMapComponent = withScriptjs(
   ))
 );
 
-const styledSideBar = styled(SideBar)`
+const StyledSideBar = styled(SideBar)`
   background: green;
 `;
 
 const Map = props => {
   return (
     <div className='map-container'>
-      <SideBar />
+      <StyledSideBar />
       <MyMapComponent
         isMarkerShown
         googleMapURL={`https://maps.googleapis.com/maps/api/js?key=${
