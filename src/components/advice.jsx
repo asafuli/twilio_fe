@@ -13,8 +13,7 @@ class Advice extends Component {
 
   async componentDidMount() {
     const uid = this.props.match.params.id;
-    const userInfo = getUserInfo(uid);
-    console.log(userInfo);
+    const userInfo = await getUserInfo(uid);
     this.setState(userInfo);
     const targetDate = new Date(2019, 4, 13, 12, 0, 0);
     setInterval(this.countdown, 1000, targetDate);
