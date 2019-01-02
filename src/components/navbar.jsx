@@ -42,7 +42,7 @@ const NavBar = props => {
               </NavLink>
             </li>
             <li className='nav-item'>
-              <NavLink className='nav-link' to='/info'>
+              <NavLink className='nav-link' to='/myList'>
                 My links
               </NavLink>
             </li>

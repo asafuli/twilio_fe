@@ -4,9 +4,17 @@ import Advice from './components/advice';
 import Flight from './components/flight';
 import NavBar from './components/navbar';
 import Map from './components/map';
+import { getCurrentUser } from './services/userService';
 
 class App extends Component {
+  state = {};
+
   render() {
+    componentDidMount = () => {
+      const uid = this.props.match.params.id;
+      this.setState({ uid });
+    };
+
     return (
       <div className='App'>
         <header className='App-header'>
