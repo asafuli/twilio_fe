@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import getMessages from '../services/userService';
+import getUserInfo from '../services/userService';
 import config from '../config/config';
 
 class Advice extends Component {
@@ -14,7 +14,7 @@ class Advice extends Component {
 
   async componentDidMount() {
     const uid = this.props.match.params.id;
-    const userInfo = this.getUserInfo(uid);
+    const userInfo = getUserInfo(uid);
     this.setState(userInfo);
     const targetDate = new Date(2019, 4, 13, 12, 0, 0);
     setInterval(this.countdown, 1000, targetDate);
