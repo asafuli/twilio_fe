@@ -41,7 +41,7 @@ const Accomodation = ({ className }) => {
   );
 };
 
-export const styledAccomodation = styled(Accomodation)`
+const styledAccomodation = styled(Accomodation)`
   .Links-list {
     color: palevioletred;
     font-weight: bold;
@@ -58,4 +58,4 @@ export const styledAccomodation = styled(Accomodation)`
   }
 `;
 
-export default Accomodation;
+export default styledAccomodation;

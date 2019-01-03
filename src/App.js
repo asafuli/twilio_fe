@@ -4,7 +4,7 @@ import Flight from './components/flight';
 import NavBar from './components/navbar';
 import Map from './components/map';
 import PersonalInfo from './components/PersonalInfo';
-import Accomodation, { styledAccomodation } from './components/accomodation';
+import styledAccomodation  from './components/accomodation';
 import { getCurrentUser } from './services/userService';
 import { Route, Switch, Redirect } from 'react-router-dom';
 
