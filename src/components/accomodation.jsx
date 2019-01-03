@@ -1,23 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
 
-export const styledAccomodation = styled(Accomodation)`
-  .Links-list {
-    color: palevioletred;
-    font-weight: bold;
-    list-style-type: none;
-  }
-
-  .info-link-item {
-    background: white;
-    font-size: 1em;
-    margin: 1em;
-    padding: 0.25em 1em;
-    border: 2px solid palevioletred;
-    border-radius: 3px;
-  }
-`;
-
 const Accomodation = () => {
   return (
     <div className='accom-container'>
@@ -57,5 +40,22 @@ const Accomodation = () => {
     </div>
   );
 };
+
+export const styledAccomodation = styled(Accomodation)`
+  .Links-list {
+    color: palevioletred;
+    font-weight: bold;
+    list-style-type: none;
+  }
+
+  .info-link-item {
+    background: white;
+    font-size: 1em;
+    margin: 1em;
+    padding: 0.25em 1em;
+    border: 2px solid palevioletred;
+    border-radius: 3px;
+  }
+`;
 
 export default Accomodation;
