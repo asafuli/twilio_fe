@@ -1,4 +1,23 @@
 import React from 'react';
+import styled from 'styled-components';
+import Accomodation from './accomodation';
+
+export const styledAccomodation = styled(Accomodation)`
+  .Links-list {
+    color: palevioletred;
+    font-weight: bold;
+    list-style-type: none;
+  }
+
+  .info-link-item {
+    background: white;
+    font-size: 1em;
+    margin: 1em;
+    padding: 0.25em 1em;
+    border: 2px solid palevioletred;
+    border-radius: 3px;
+  }
+`;
 
 const Accomodation = () => {
   return (
@@ -14,7 +33,6 @@ const Accomodation = () => {
           >
             פרטים על הבית בבוקינג
           </a>
-          />
         </li>
         <li className='info-link-item'>
           <a
@@ -25,7 +43,6 @@ const Accomodation = () => {
           >
             פרטים על הבית בלמטייל
           </a>
-          />
         </li>
         <li className='info-link-item'>
           <a
@@ -36,7 +53,6 @@ const Accomodation = () => {
           >
             המיקום של הבית בגוגל מפות
           </a>
-          />
         </li>
       </ul>
     </div>

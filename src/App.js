@@ -4,7 +4,7 @@ import Flight from './components/flight';
 import NavBar from './components/navbar';
 import Map from './components/map';
 import PersonalInfo from './components/PersonalInfo';
-import Accomodation from './components/accomodation';
+import Accomodation, { styledAccomodation } from './components/accomodation';
 import { getCurrentUser } from './services/userService';
 import { Route, Switch, Redirect } from 'react-router-dom';
 
@@ -25,7 +25,7 @@ class App extends Component {
           <Switch>
             <Route exact path='/user/:id' component={Advice} />
             <Route exact path='/flight' component={Flight} />
-            <Route exact path='/accomodation' component={Accomodation} />
+            <Route exact path='/accomodation' component={styledAccomodation} />
             <Route exact path='/map' component={Map} />
             <Route exact path='/info' component={Flight} />
             <Route
