@@ -1,6 +1,5 @@
 import React from 'react';
 import styled from 'styled-components';
-import Accomodation from './accomodation';
 
 export const styledAccomodation = styled(Accomodation)`
   .Links-list {
