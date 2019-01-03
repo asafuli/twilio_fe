@@ -77,7 +77,7 @@ class Advice extends Component {
                           <div key={idx}>
                             <li>
                               <strong>
-                                <a href={msg}>{msg}</a>
+                                <a href={`http://${msg}`}>{msg}</a>
                               </strong>
                             </li>{' '}
                           </div>
