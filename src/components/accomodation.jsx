@@ -1,9 +1,9 @@
 import React from 'react';
 import styled from 'styled-components';
 
-const Accomodation = () => {
+const Accomodation = ({ className }) => {
   return (
-    <div className='accom-container'>
+    <div className={className}>
       <ul className='Links-list'>
         Recommended links
         <li className='info-link-item'>
