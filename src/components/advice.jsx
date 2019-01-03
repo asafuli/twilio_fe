@@ -77,7 +77,13 @@ class Advice extends Component {
                           <div key={idx}>
                             <li>
                               <strong>
-                                <a href={`http://${msg}`}>{msg}</a>
+                                <a
+                                  target='_blank'
+                                  rel='noopener noreferrer'
+                                  href={`http://${msg}`}
+                                >
+                                  {msg}
+                                </a>
                               </strong>
                             </li>{' '}
                           </div>
