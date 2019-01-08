@@ -9,7 +9,7 @@ const NavBar = props => {
           My list
         </a>
         <button
-          className='navbar-toggler'
+          className='navbar-toggler collapsed'
           type='button'
           data-toggle='collapse'
           data-target='#navbarNav'

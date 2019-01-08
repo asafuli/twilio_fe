@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { Component, lazy, Suspense } from 'react';
 import { getUserInfo } from '../services/userService';
 
 class Advice extends Component {
