@@ -50,7 +50,7 @@ class Advice extends Component {
               <div className='image fit flush'>
                 <img src='../images/pic02.jpg' alt='' />
               </div>
-              <header className='special'>
+              <p className='special'>
                 <h1>
                   {' '}
                   Only{' '}
@@ -67,7 +67,7 @@ class Advice extends Component {
                 <button type='submit' onClick={this.toggleShowMsg}>
                   clickMe
                 </button>
-              </header>
+              </p>
               {this.state.showMessages ? (
                 <div className='content'>
                   <ul>
