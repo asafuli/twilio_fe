@@ -2506,9 +2506,22 @@ input[type='radio']:focus + label:before {
   width: 50%;
 }
 
+.styled-side-bar {
+  width: 20%;
+  margin: 1em;
+}
+
+.styled-map-component {
+  width: 70%;
+  margin: 2em;
+}
+
 @media screen and (max-width: 980px) {
   .gallery > * {
     width: 100%;
+  }
+  .styled-map-component {
+    margin: 1em;
   }
 }
 
