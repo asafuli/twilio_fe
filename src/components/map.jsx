@@ -43,7 +43,7 @@ const Map = props => {
           process.env.REACT_APP_MAPS_API_KEY
         }&v=3.exp&libraries=geometry,drawing,places`}
         loadingElement={<div style={{ height: `100%` }} />}
-        containerElement={<div style={{ height: `600px` }} />}
+        containerElement={<div style={{ height: `700px` }} />}
         mapElement={<div style={{ height: `100%` }} />}
       />
     </div>

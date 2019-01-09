@@ -2519,9 +2519,11 @@ input[type='radio']:focus + label:before {
 @media screen and (max-width: 980px) {
   .gallery > * {
     width: 100%;
+    transition: all 1s;
   }
   .styled-map-component {
     margin: 1em;
+    padding: 1em;
   }
 }
 
