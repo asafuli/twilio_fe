@@ -35,8 +35,9 @@ const StyledSideBar = styled(SideBar)`
 const Map = props => {
   return (
     <div className='map-container'>
-      <StyledSideBar />
+      <StyledSideBar className='gallery' />
       <StyledMapComponent
+        className='gallery'
         isMarkerShown
         googleMapURL={`https://maps.googleapis.com/maps/api/js?key=${
           process.env.REACT_APP_MAPS_API_KEY
