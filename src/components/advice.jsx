@@ -12,7 +12,7 @@ class Advice extends Component {
   };
 
   async componentDidMount() {
-    const uid = this.props.match.params.id;
+    const uid = this.props.uid ? this.props.uid : this.props.match.params.id;
     const userInfo = await getUserInfo(uid);
     this.setState(userInfo);
     const targetDate = new Date(2019, 4, 13, 12, 0, 0);
@@ -28,7 +28,7 @@ class Advice extends Component {
   };
 
   toggleShowMsg = async () => {
-    const uid = this.props.match.params.id;
+    const uid = this.props.uid ? this.props.uid : this.props.match.params.id;
     const userInfo = await getUserInfo(uid);
     this.setState({ ...userInfo, showMessages: !this.state.showMessages });
   };

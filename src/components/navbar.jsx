@@ -5,9 +5,7 @@ const NavBar = props => {
   return (
     <div className='nav-container'>
       <nav className='navbar navbar-expand-lg navbar-dark bg-dark'>
-        <a className='navbar-brand' href='#'>
-          My list
-        </a>
+        {/* <a className='navbar-brand' href='#' /> */}
         <button
           className='navbar-toggler collapsed'
           type='button'
@@ -37,8 +35,8 @@ const NavBar = props => {
               </NavLink>
             </li>
             <li className='nav-item'>
-              <NavLink className='nav-link' to='/info'>
-                Useful info
+              <NavLink className='nav-link' to='/home'>
+                My Page
               </NavLink>
             </li>
             <li className='nav-item'>

@@ -26,7 +26,11 @@ class App extends Component {
             <Route exact path='/flight' component={Flight} />
             <Route exact path='/accomodation' component={styledAccomodation} />
             <Route exact path='/map' component={Map} />
-            <Route exact path='/info' component={Flight} />
+            <Route 
+              exact 
+              path='/home' 
+              render={props => <Advice {...props} uid={this.state.uid}
+            />
             <Route
               exact
               path='/myList'
