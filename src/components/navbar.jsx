@@ -1,22 +1,17 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { NavLink } from 'react-router-dom';
 
 const NavBar = props => {
-  const [hiddenClass, setHiddenClass] = useState('');
-
   const getNavBarClasses = () => {
     console.log('called getClasses, hiddenClass = ', hiddenClass);
-    return `navbar fixed-top ${hiddenClass} navbar-expand-lg navbar-dark bg-dark`;
-  };
-
-  const hideNavOnScroll = e => {
-    setHiddenClass('navbar-hidden');
-    console.log(e);
+    return `navbar fixed-top ${
+      this.props.navBarClass
+    } navbar-expand-lg navbar-dark bg-dark`;
   };
 
   return (
     <div className='nav-container'>
-      <nav className={getNavBarClasses()} onScroll={e => hideNavOnScroll(e)}>
+      <nav className={getNavBarClasses()}>
         <button
           className='navbar-toggler collapsed'
           type='button'

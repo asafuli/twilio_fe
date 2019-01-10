@@ -5,22 +5,28 @@ import NavBar from './components/navbar';
 import Map from './components/map';
 import PersonalInfo from './components/PersonalInfo';
 import styledAccomodation from './components/accomodation';
-import { getCurrentUser } from './services/userService';
-import { Route, Switch, Redirect } from 'react-router-dom';
+import { Route, Switch } from 'react-router-dom';
 
 class App extends Component {
   state = {};
 
+  hideNavOnScroll = e => {
+    this.setState({ navBarClass: 'navbar-hidden' });
+    console.log(e);
+  };
+
   componentDidMount = () => {
     const pathArray = window.location.pathname.split('/');
     this.setState({ uid: pathArray[2] });
+
+    window.addEventListener('scroll', this.hideNavOnScroll.bind(this));
   };
 
   render() {
     return (
       <div className='App'>
         <header className='App-header'>
-          <NavBar />
+          <NavBar navBarClass={this.state.navBarClass} />
           <Switch>
             <Route exact path='/user/:id' component={Advice} />
             <Route exact path='/flight' component={Flight} />
