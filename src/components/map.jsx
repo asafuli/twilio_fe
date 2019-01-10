@@ -2,7 +2,7 @@ import React from 'react';
 import {
   withScriptjs,
   withGoogleMap,
-  GoogleMap,
+   GoogleMap,
   Marker
 } from 'react-google-maps';
 import SideBar from './sideBar';

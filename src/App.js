@@ -10,6 +10,11 @@ import { Route, Switch } from 'react-router-dom';
 class App extends Component {
   state = {};
 
+  constructor() {
+    super(props);
+    this.hideNavOnScroll = this.hideNavOnScroll.bind(this);
+  }
+
   hideNavOnScroll = e => {
     let { lastScrollTop = 0 } = this.state;
     let st = window.pageYOffset || document.documentElement.scrollTop;
@@ -27,8 +32,12 @@ class App extends Component {
     const pathArray = window.location.pathname.split('/');
     this.setState({ uid: pathArray[2] });
 
-    window.addEventListener('scroll', this.hideNavOnScroll.bind(this));
+    window.addEventListener('scroll', this.hideNavOnScroll);
   };
+
+  componentWillUnmount() {
+    window.removeEventListener('scroll', this.hideNavOnScroll);
+  }
 
   render() {
     return (
