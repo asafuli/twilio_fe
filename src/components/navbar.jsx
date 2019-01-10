@@ -1,6 +1,5 @@
 import React from 'react';
 import { Link, NavLink } from 'react-router-dom';
-import NavBar from './navbar';
 
 const NavBar = props => {
   let hiddenClass = '';
