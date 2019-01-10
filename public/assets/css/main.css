@@ -3352,6 +3352,9 @@ body:after {
   }
 }
 
-.nav-container {
-  margin: 0 0 40px 0;
+.navbar fixed-top {
+  transition: transform 0.3s ease-in-out;
+  will-change: transform;
+  transform: translateY(0);
+  transform: translateY(-100%);
 }
