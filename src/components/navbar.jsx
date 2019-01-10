@@ -16,7 +16,7 @@ const NavBar = props => {
 
   return (
     <div className='nav-container'>
-      <nav className={getNavBarClasses()} onClick={e => hideNavOnScroll(e)}>
+      <nav className={getNavBarClasses()} onScroll={e => hideNavOnScroll(e)}>
         <button
           className='navbar-toggler collapsed'
           type='button'
