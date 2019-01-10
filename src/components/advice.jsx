@@ -16,7 +16,11 @@ class Advice extends Component {
     const userInfo = await getUserInfo(uid);
     this.setState(userInfo);
     const targetDate = new Date(2019, 4, 13, 12, 0, 0);
-    setInterval(this.countdown, 1000, targetDate);
+    const secondsTimer = setInterval(this.countdown, 1000, targetDate);
+  }
+
+  componentWillUnmount() {
+    clearInterval(secondsTimer);
   }
 
   countdown = targetDate => {

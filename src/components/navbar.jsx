@@ -2,10 +2,8 @@ import React from 'react';
 import { NavLink } from 'react-router-dom';
 
 const NavBar = ({ navBarClass = '' }) => {
-  const getNavBarClasses = () => {
-    console.log('called getClasses, hiddenClass = ', navBarClass);
-    return `navbar fixed-top ${navBarClass} navbar-expand-lg navbar-dark bg-dark`;
-  };
+  const getNavBarClasses = () =>
+    `navbar fixed-top ${navBarClass} navbar-expand-lg navbar-dark bg-dark`;
 
   return (
     <div className='nav-container'>
