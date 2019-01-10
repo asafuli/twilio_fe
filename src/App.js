@@ -10,7 +10,7 @@ import { Route, Switch } from 'react-router-dom';
 class App extends Component {
   state = {};
 
-  constructor() {
+  constructor(props) {
     super(props);
     this.hideNavOnScroll = this.hideNavOnScroll.bind(this);
   }
