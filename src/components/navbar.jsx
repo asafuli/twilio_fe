@@ -5,15 +5,16 @@ import NavBar from './navbar';
 const NavBar = props => {
   let hiddenClass = '';
 
-  hideNavOnScroll = () => {
+  const hideNavOnScroll = e => {
     hiddenClass = 'navbar-hidden';
+    console.log(e);
   };
 
   return (
     <div className='nav-container'>
       <nav
         className={`navbar fixed-top ${hiddenClass} navbar-expand-lg navbar-dark bg-dark`}
-        onScroll={() => this.hideNavOnScroll()}
+        onScroll={e => this.hideNavOnScroll(e)}
       >
         <button
           className='navbar-toggler collapsed'
