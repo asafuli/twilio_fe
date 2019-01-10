@@ -3356,5 +3356,8 @@ body:after {
   transition: transform 0.3s ease-in-out;
   will-change: transform;
   transform: translateY(0);
+}
+
+.navbar-hidden {
   transform: translateY(-100%);
 }

@@ -1,11 +1,20 @@
 import React from 'react';
 import { Link, NavLink } from 'react-router-dom';
+import NavBar from './navbar';
 
 const NavBar = props => {
+  let hiddenClass = '';
+
+  hideNavOnScroll = () => {
+    hiddenClass = 'navbar-hidden';
+  };
+
   return (
     <div className='nav-container'>
-      <nav className='navbar fixed-top navbar-expand-lg navbar-dark bg-dark'>
-        {/* <a className='navbar-brand' href='#' /> */}
+      <nav
+        className={`navbar fixed-top ${hiddenClass} navbar-expand-lg navbar-dark bg-dark`}
+        onScroll={() => this.hideNavOnScroll()}
+      >
         <button
           className='navbar-toggler collapsed'
           type='button'
