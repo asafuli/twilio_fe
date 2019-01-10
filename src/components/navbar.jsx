@@ -13,7 +13,7 @@ const NavBar = props => {
     <div className='nav-container'>
       <nav
         className={`navbar fixed-top ${hiddenClass} navbar-expand-lg navbar-dark bg-dark`}
-        onScroll={e => hideNavOnScroll(e)}
+        onClick={e => hideNavOnScroll(e)}
       >
         <button
           className='navbar-toggler collapsed'
