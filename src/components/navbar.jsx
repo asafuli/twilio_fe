@@ -1,12 +1,10 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
 
-const NavBar = props => {
+const NavBar = ({ navBarClass = '' }) => {
   const getNavBarClasses = () => {
-    console.log('called getClasses, hiddenClass = ', hiddenClass);
-    return `navbar fixed-top ${
-      this.props.navBarClass
-    } navbar-expand-lg navbar-dark bg-dark`;
+    console.log('called getClasses, hiddenClass = ', navBarClass);
+    return `navbar fixed-top ${navBarClass} navbar-expand-lg navbar-dark bg-dark`;
   };
 
   return (
