@@ -13,7 +13,7 @@ const NavBar = props => {
   return (
     <div className='nav-container'>
       <nav
-        className={hiddenClass ? navbarClass + hiddenClass : navbarClass}}
+        className={hiddenClass ? navbarClass + hiddenClass : navbarClass}
         onClick={e => hideNavOnScroll(e)}
       >
         <button
