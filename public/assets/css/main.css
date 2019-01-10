@@ -3352,7 +3352,7 @@ body:after {
   }
 }
 
-.navbar fixed-top {
+.fixed-top {
   transition: transform 0.3s ease-in-out;
   will-change: transform;
   transform: translateY(0);
