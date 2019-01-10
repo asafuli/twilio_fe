@@ -4,7 +4,7 @@ import { Link, NavLink } from 'react-router-dom';
 const NavBar = props => {
   return (
     <div className='nav-container'>
-      <nav className='navbar sticky-top navbar-expand-lg navbar-dark bg-dark'>
+      <nav className='navbar fixed-top navbar-expand-lg navbar-dark bg-dark'>
         {/* <a className='navbar-brand' href='#' /> */}
         <button
           className='navbar-toggler collapsed'
