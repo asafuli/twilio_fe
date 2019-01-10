@@ -11,10 +11,11 @@ class App extends Component {
   state = {};
 
   hideNavOnScroll = e => {
+    const { lastScrollTop = 0 } = this.state;
     let st = window.pageYOffset || document.documentElement.scrollTop;
     let newNavBarClass = '';
 
-    if (st > (this.state.lastScrollTop || 0)) {
+    if (st > lastScrollTop) {
       newNavBarClass = 'navbar-hidden';
     }
 
