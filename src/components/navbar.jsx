@@ -1,9 +1,12 @@
 import React from 'react';
 import { Link, NavLink } from 'react-router-dom';
 
-const NavBar = props => {
   let hiddenClass = '';
-  const navbarClass = 'navbar fixed-top navbar-expand-lg navbar-dark bg-dark';
+
+  const getNavBarClasses = () => {
+    console.log('called getClasses, hiddenClass = ', hiddenClass);
+    return `navbar fixed-top ${hiddenClass} navbar-expand-lg navbar-dark bg-dark`;
+  };
 
   const hideNavOnScroll = e => {
     hiddenClass = 'navbar-hidden';
@@ -12,10 +15,7 @@ const NavBar = props => {
 
   return (
     <div className='nav-container'>
-      <nav
-        className={hiddenClass ? navbarClass + hiddenClass : navbarClass}
-        onClick={e => hideNavOnScroll(e)}
-      >
+      <nav className={getNavBarClasses()} onClick={e => hideNavOnScroll(e)}>
         <button
           className='navbar-toggler collapsed'
           type='button'
