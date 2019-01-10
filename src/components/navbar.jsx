@@ -1,8 +1,8 @@
-import React from 'react';
-import { Link, NavLink } from 'react-router-dom';
+import React, { useState } from 'react';
+import { NavLink } from 'react-router-dom';
 
 const NavBar = props => {
-  let hiddenClass = '';
+  const [hiddenClass, setHiddenClass] = useState('');
 
   const getNavBarClasses = () => {
     console.log('called getClasses, hiddenClass = ', hiddenClass);
@@ -10,7 +10,7 @@ const NavBar = props => {
   };
 
   const hideNavOnScroll = e => {
-    hiddenClass = 'navbar-hidden';
+    setHiddenClass('navbar-hidden');
     console.log(e);
   };
 
