@@ -240,6 +240,9 @@ class connectedAdvice extends Component {
   }
 }
 
-const Advice = connect(MapStateToProps)(connectedAdvice);
+const Advice = connect(
+  MapStateToProps,
+  MapDispatchToProps
+)(connectedAdvice);
 
 export default Advice;
