@@ -1,5 +1,5 @@
 import React, { Component, lazy, Suspense } from 'react';
-import { connect, MapDispatchToProps } from 'react-redux';
+import { connect } from 'react-redux';
 import { toggleMessages } from './../redux/actions/index';
 import { getUserInfo } from '../services/userService';
 
