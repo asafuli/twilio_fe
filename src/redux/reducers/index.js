@@ -1,3 +1,5 @@
+import { TOGGLE_MESSAGES } from '../constants/action-types';
+
 const initialState = {
   advice: '',
   user: '',
@@ -8,6 +10,9 @@ const initialState = {
 };
 
 function rootReducer(state = initialState, action) {
+  if (action.type === TOGGLE_MESSAGES) {
+    return { ...state, showMessages: !action.payload };
+  }
   return state;
 }
 
