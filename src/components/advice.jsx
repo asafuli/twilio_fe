@@ -1,13 +1,25 @@
 import React, { Component, lazy, Suspense } from 'react';
+import { connect, MapDispatchToProps } from 'react-redux';
+import { toggleMessages } from './../redux/actions/index';
 import { getUserInfo } from '../services/userService';
+import Advice from './advice';
 
-class Advice extends Component {
+const MapStateToProps = state => {
+  return { showMessages: state.showMessages };
+};
+
+function MapDispatchToProps(dispatch) {
+  return {
+    toggleMessages: isMessagesShown => dispatch(toggleMessages(isMessagesShown))
+  };
+}
+
+class connectedAdvice extends Component {
   state = {
     advice: '',
     user: '',
     resource: '',
     message: [],
-    showMessages: false,
     secondsToFlight: 0
   };
 
@@ -17,6 +29,7 @@ class Advice extends Component {
     this.setState(userInfo);
     const targetDate = new Date(2019, 4, 13, 12, 0, 0);
     this.secondsTimer = setInterval(this.countdown, 1000, targetDate);
+    console.log('props - show messages: ', this.props.showMessages);
   }
 
   componentWillUnmount() {
@@ -34,7 +47,8 @@ class Advice extends Component {
   toggleShowMsg = async () => {
     const uid = this.props.uid ? this.props.uid : this.props.match.params.id;
     const userInfo = await getUserInfo(uid);
-    this.setState({ ...userInfo, showMessages: !this.state.showMessages });
+    this.setState({ ...userInfo });
+    this.props.toggleMessages(this.props.showMessages);
   };
 
   render() {
@@ -72,7 +86,7 @@ class Advice extends Component {
                   clickMe
                 </button>
               </header>
-              {this.state.showMessages ? (
+              {this.props.showMessages ? (
                 <div className='content'>
                   <ul>
                     {message.map((msg, idx) => {
@@ -226,4 +240,7 @@ class Advice extends Component {
     );
   }
 }
+
+const Advice = connect(MapStateToProps)(connectedAdvice);
+
 export default Advice;

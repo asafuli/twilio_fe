@@ -1,0 +1,1 @@
+export const TOGGLE_MESSAGES = 'TOGGLE_MESSAGES';
