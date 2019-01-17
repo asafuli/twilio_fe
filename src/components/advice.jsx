@@ -28,7 +28,6 @@ class connectedAdvice extends Component {
     this.setState(userInfo);
     const targetDate = new Date(2019, 4, 13, 12, 0, 0);
     this.secondsTimer = setInterval(this.countdown, 1000, targetDate);
-    console.log('props - show messages: ', this.props.showMessages);
   }
 
   componentWillUnmount() {
@@ -51,6 +50,7 @@ class connectedAdvice extends Component {
   };
 
   render() {
+    console.log('props - show messages: ', this.props.showMessages);
     const { advice, user, resource, message } = this.state;
     return advice.length === 0 ? (
       <h1>Loading...</h1>
