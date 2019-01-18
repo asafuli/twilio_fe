@@ -1,7 +1,17 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
+import { connect, MapStateToProps } from 'react-redux';
+import NavBar from './navbar';
 
-const NavBar = ({ navBarClass = '' }) => {
+const MapStateToProps = state => {
+  const { navBarClass, lastScrollTop } = state;
+  return {
+    navBarClass,
+    lastScrollTop
+  };
+};
+
+const ConnectedNavBar = ({ navBarClass = '' }) => {
   const getNavBarClasses = () =>
     `navbar fixed-top ${navBarClass} navbar-expand-lg navbar-dark bg-dark`;
 
@@ -53,4 +63,5 @@ const NavBar = ({ navBarClass = '' }) => {
   );
 };
 
+const NavBar = connect(MapStateToProps)(ConnectedNavBar);
 export default NavBar;

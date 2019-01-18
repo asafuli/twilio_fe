@@ -1,19 +1,7 @@
-import { TOGGLE_MESSAGES } from '../constants/action-types';
+import navReducer from './navReducer';
+import adviceReducer from './adviceReducer';
+import { combineReducers } from 'redux';
 
-const initialState = {
-  advice: '',
-  user: '',
-  resource: '',
-  message: [],
-  showMessages: false,
-  secondsToFlight: 0
-};
-
-function rootReducer(state = initialState, action) {
-  if (action.type === TOGGLE_MESSAGES) {
-    return { ...state, showMessages: !action.payload };
-  }
-  return state;
-}
+const rootReducer = combineReducers({ navReducer, adviceReducer });
 
 export default rootReducer;

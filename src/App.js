@@ -6,37 +6,31 @@ import Map from './components/map';
 import PersonalInfo from './components/PersonalInfo';
 import styledAccomodation from './components/accomodation';
 import { Route, Switch } from 'react-router-dom';
+import { connect } from 'react-redux';
+import { hideNavOnScrollMW } from './redux/middleware/hideNavOnScrollMW';
 
-class App extends Component {
+function MapDispatchToProps(dispatch) {
+  return {
+    hideNavOnScrollMW: () => dispatch(hideNavOnScrollMW())
+  };
+}
+
+class ConnectedApp extends Component {
   state = {};
 
   constructor(props) {
     super(props);
-    this.hideNavOnScroll = this.hideNavOnScroll.bind(this);
   }
-
-  hideNavOnScroll = e => {
-    let { lastScrollTop = 0 } = this.state;
-    let st = window.pageYOffset || document.documentElement.scrollTop;
-    let newNavBarClass = '';
-
-    if (st > lastScrollTop) {
-      newNavBarClass = 'navbar-hidden';
-    }
-
-    lastScrollTop = st <= 0 ? 0 : st;
-    this.setState({ navBarClass: newNavBarClass, lastScrollTop });
-  };
 
   componentDidMount = () => {
     const pathArray = window.location.pathname.split('/');
     this.setState({ uid: pathArray[2] });
 
-    window.addEventListener('scroll', this.hideNavOnScroll);
+    window.addEventListener('scroll', this.props.hideNavOnScrollMW);
   };
 
   componentWillUnmount() {
-    window.removeEventListener('scroll', this.hideNavOnScroll);
+    window.removeEventListener('scroll', this.props.hideNavOnScrollMW);
   }
 
   render() {
@@ -65,5 +59,10 @@ class App extends Component {
     );
   }
 }
+
+const App = connect(
+  null,
+  MapDispatchToProps
+)(ConnectedApp);
 
 export default App;
