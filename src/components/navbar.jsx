@@ -1,6 +1,6 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
-import { connect, MapStateToProps } from 'react-redux';
+import { connect } from 'react-redux';
 import NavBar from './navbar';
 
 const MapStateToProps = state => {
