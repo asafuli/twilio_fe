@@ -1,7 +1,6 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
 import { connect } from 'react-redux';
-import NavBar from './navbar';
 
 const MapStateToProps = state => {
   const { navBarClass, lastScrollTop } = state;
