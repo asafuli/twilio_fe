@@ -1,15 +1,22 @@
 import { TOGGLE_MESSAGES } from '../constants/action-types';
-import { TOGGLE_NAVBAR } from '../constants/action-types';
 import { UPDATE_NAV_CLASS } from '../constants/action-types';
+import store from '../store/index';
 
 export function toggleMessages(payload) {
   return { type: TOGGLE_MESSAGES, payload };
 }
 
-export function toggleNavbar(payload) {
-  return { type: TOGGLE_NAVBAR, payload };
-}
+export const updateNavClass = () => (dispatch, getState) => {
+  let { lastScrollTop = 0 } = getState();
+  let st = window.pageYOffset || document.documentElement.scrollTop;
+  let newNavBarClass = '';
+  if (st > lastScrollTop) {
+    newNavBarClass = 'navbar-hidden';
+  }
+  lastScrollTop = st <= 0 ? 0 : st;
 
-export function updateNavClass(payload) {
-  return { type: UPDATE_NAV_CLASS, payload };
-}
+  dispatch({
+    type: UPDATE_NAV_CLASS,
+    payload: { navBarClass: newNavBarClass, lastScrollTop }
+  });
+};
