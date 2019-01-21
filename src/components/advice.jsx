@@ -50,7 +50,6 @@ class connectedAdvice extends Component {
   };
 
   render() {
-    console.log('props - show messages: ', this.props.showMessages);
     const { advice, user, resource, message } = this.state;
     return advice.length === 0 ? (
       <h1>Loading...</h1>
