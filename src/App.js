@@ -37,7 +37,7 @@ class ConnectedApp extends Component {
     return (
       <div className='App'>
         <header className='App-header'>
-          <NavBar navBarClass={this.state.navBarClass} />
+          <NavBar />
           <Switch>
             <Route exact path='/user/:id' component={Advice} />
             <Route exact path='/flight' component={Flight} />
