@@ -9,11 +9,11 @@ import { Route, Switch } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { updateNavClass } from './redux/actions/index';
 
-// function MapDispatchToProps(dispatch) {
-//   return {
-//     hideNavOnScrollMW: () => dispatch(hideNavOnScrollMW())
-//   };
-// }
+function MapDispatchToProps(dispatch) {
+  return {
+    updateNavClass: () => dispatch(updateNavClass())
+  };
+}
 
 class ConnectedApp extends Component {
   state = {};
@@ -26,11 +26,11 @@ class ConnectedApp extends Component {
     const pathArray = window.location.pathname.split('/');
     this.setState({ uid: pathArray[2] });
 
-    window.addEventListener('scroll', updateNavClass);
+    window.addEventListener('scroll', this.props.updateNavClass);
   };
 
   componentWillUnmount() {
-    window.removeEventListener('scroll', updateNavClass);
+    window.removeEventListener('scroll', this.props.updateNavClass);
   }
 
   render() {
