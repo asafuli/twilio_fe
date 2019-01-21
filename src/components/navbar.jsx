@@ -1,9 +1,10 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
 import { connect } from 'react-redux';
+import navReducer from './../redux/reducers/navReducer';
 
 const MapStateToProps = state => {
-  const { navBarClass, lastScrollTop } = state;
+  const { navBarClass, lastScrollTop } = state.navReducer;
   console.log('map state to props - STATE IS : ', state);
   console.log('map state to props returned: ', {
     navBarClass,
