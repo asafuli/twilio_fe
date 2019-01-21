@@ -10,7 +10,7 @@ const MapStateToProps = state => {
   };
 };
 
-const ConnectedNavBar = () => {
+const ConnectedNavBar = props => {
   const getNavBarClasses = () =>
     `navbar fixed-top ${
       props.navBarClass
