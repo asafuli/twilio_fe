@@ -7,7 +7,6 @@ const initialState = {
 
 function navReducer(state = initialState, action) {
   if (action.type === UPDATE_NAV_CLASS) {
-    console.log('state: ', { ...state }, 'paylod: ', { ...action.payload });
     return { ...state, ...action.payload };
   }
   return state;
