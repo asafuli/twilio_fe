@@ -13,7 +13,7 @@ const MapStateToProps = state => {
 const ConnectedNavBar = () => {
   const getNavBarClasses = () =>
     `navbar fixed-top ${
-      this.props.navBarClass
+      props.navBarClass
     } navbar-expand-lg navbar-dark bg-dark`;
 
   console.log('props.navBarClass: ', props.navBarClass);
