@@ -7,13 +7,13 @@ import PersonalInfo from './components/PersonalInfo';
 import styledAccomodation from './components/accomodation';
 import { Route, Switch } from 'react-router-dom';
 import { connect } from 'react-redux';
-import { hideNavOnScrollMW } from './redux/middleware/hideNavOnScrollMW';
+import { updateNavClass } from './redux/actions/index';
 
-function MapDispatchToProps(dispatch) {
-  return {
-    hideNavOnScrollMW: () => dispatch(hideNavOnScrollMW())
-  };
-}
+// function MapDispatchToProps(dispatch) {
+//   return {
+//     hideNavOnScrollMW: () => dispatch(hideNavOnScrollMW())
+//   };
+// }
 
 class ConnectedApp extends Component {
   state = {};
@@ -26,11 +26,11 @@ class ConnectedApp extends Component {
     const pathArray = window.location.pathname.split('/');
     this.setState({ uid: pathArray[2] });
 
-    window.addEventListener('scroll', this.props.hideNavOnScrollMW);
+    window.addEventListener('scroll', updateNavClass);
   };
 
   componentWillUnmount() {
-    window.removeEventListener('scroll', this.props.hideNavOnScrollMW);
+    window.removeEventListener('scroll', updateNavClass);
   }
 
   render() {

@@ -1,6 +1,6 @@
 import { TOGGLE_MESSAGES } from '../constants/action-types';
 import { UPDATE_NAV_CLASS } from '../constants/action-types';
-import store from '../store/index';
+
 
 export function toggleMessages(payload) {
   return { type: TOGGLE_MESSAGES, payload };
