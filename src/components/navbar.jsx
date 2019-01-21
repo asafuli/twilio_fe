@@ -11,15 +11,13 @@ const MapStateToProps = state => {
 };
 
 const ConnectedNavBar = props => {
-  const getNavBarClasses = () =>
-    `navbar fixed-top ${
-      props.navBarClass
-    } navbar-expand-lg navbar-dark bg-dark`;
-
-  console.log('props.navBarClass: ', props.navBarClass);
   return (
     <div className='nav-container'>
-      <nav className={getNavBarClasses()}>
+      <nav
+        className={`navbar fixed-top ${
+          props.navBarClass
+        } navbar-expand-lg navbar-dark bg-dark`}
+      >
         <button
           className='navbar-toggler collapsed'
           type='button'
