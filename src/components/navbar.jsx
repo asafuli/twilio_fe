@@ -16,7 +16,7 @@ const ConnectedNavBar = () => {
       this.props.navBarClass
     } navbar-expand-lg navbar-dark bg-dark`;
 
-  console.log('this.props.navBarClass: ', this.props.navBarClass);
+  console.log('props.navBarClass: ', props.navBarClass);
   return (
     <div className='nav-container'>
       <nav className={getNavBarClasses()}>
