@@ -4,6 +4,7 @@ import { connect } from 'react-redux';
 
 const MapStateToProps = state => {
   const { navBarClass, lastScrollTop } = state;
+  console.log('map state to props - STATE IS : ', state);
   console.log('map state to props returned: ', {
     navBarClass,
     lastScrollTop
