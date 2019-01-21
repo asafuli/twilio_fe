@@ -10,10 +10,13 @@ const MapStateToProps = state => {
   };
 };
 
-const ConnectedNavBar = ({ navBarClass = '' }) => {
+const ConnectedNavBar = () => {
   const getNavBarClasses = () =>
-    `navbar fixed-top ${navBarClass} navbar-expand-lg navbar-dark bg-dark`;
+    `navbar fixed-top ${
+      this.props.navBarClass
+    } navbar-expand-lg navbar-dark bg-dark`;
 
+  console.log('this.props.navBarClass: ', this.props.navBarClass);
   return (
     <div className='nav-container'>
       <nav className={getNavBarClasses()}>
