@@ -3,6 +3,7 @@ import { NavLink } from 'react-router-dom';
 import { connect } from 'react-redux';
 
 const MapStateToProps = state => {
+  console.log('state: ', state);
   const { navBarClass, lastScrollTop } = state;
   return {
     navBarClass,
@@ -11,6 +12,7 @@ const MapStateToProps = state => {
 };
 
 const ConnectedNavBar = props => {
+  console.log('props: ', props);
   return (
     <div className='nav-container'>
       <nav
