@@ -3,8 +3,11 @@ import { NavLink } from 'react-router-dom';
 import { connect } from 'react-redux';
 
 const MapStateToProps = state => {
-  console.log('state: ', state);
   const { navBarClass, lastScrollTop } = state;
+  console.log('map state to props returned: ', {
+    navBarClass,
+    lastScrollTop
+  });
   return {
     navBarClass,
     lastScrollTop
