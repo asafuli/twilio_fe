@@ -6,7 +6,7 @@ export function toggleMessages(payload) {
 }
 
 export const updateNavClass = () => (dispatch, getState) => {
-  let { lastScrollTop = 0 } = getState();
+  let { lastScrollTop = 0 } = getState().navReducer;
   console.log('window.pageYOffset', window.pageYOffset);
   console.log(
     'document.documentElement.scrollTop',
