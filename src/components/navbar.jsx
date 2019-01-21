@@ -5,11 +5,6 @@ import navReducer from './../redux/reducers/navReducer';
 
 const MapStateToProps = state => {
   const { navBarClass, lastScrollTop } = state.navReducer;
-  console.log('map state to props - STATE IS : ', state);
-  console.log('map state to props returned: ', {
-    navBarClass,
-    lastScrollTop
-  });
   return {
     navBarClass,
     lastScrollTop
@@ -17,7 +12,6 @@ const MapStateToProps = state => {
 };
 
 const ConnectedNavBar = props => {
-  console.log('props: ', props);
   return (
     <div className='nav-container'>
       <nav
