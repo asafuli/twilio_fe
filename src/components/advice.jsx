@@ -40,7 +40,7 @@ class connectedAdvice extends Component {
 
   render() {
     const { advice, user, resource, message } = this.props;
-    return advice.length === 0 ? (
+    return advice ? (
       <h1>Loading...</h1>
     ) : (
       <div className='container'>
