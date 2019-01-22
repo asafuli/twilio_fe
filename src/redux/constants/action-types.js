@@ -1,3 +1,5 @@
 export const TOGGLE_MESSAGES = 'TOGGLE_MESSAGES';
-export const TOGGLE_NAVBAR = 'TOGGLE_NAVBAR';
+export const UPDATE_USER_INFO = 'UPDATE_USER_INFO';
 export const UPDATE_NAV_CLASS = 'UPDATE_NAV_CLASS';
+
+

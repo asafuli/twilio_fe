@@ -1,5 +1,8 @@
-import { TOGGLE_MESSAGES } from '../constants/action-types';
-import { UPDATE_NAV_CLASS } from '../constants/action-types';
+import {
+  TOGGLE_MESSAGES,
+  UPDATE_USER_INFO,
+  UPDATE_NAV_CLASS
+} from '../constants/action-types';
 import { getUserInfo } from '../../services/userService';
 
 export const toggleMessages = ownProps => async (dispatch, getState) => {
@@ -15,6 +18,17 @@ export const toggleMessages = ownProps => async (dispatch, getState) => {
       showMessages: getState().adviceReducer.showMessages,
       ...userInfo
     }
+  });
+};
+
+export const updateUserInfo = ownProps => async (dispatch, getState) => {
+  const uid = ownProps.uid ? ownProps.uid : ownProps.match.params.id;
+  console.log('update user info  - uid :', uid);
+  const userInfo = await getUserInfo(uid);
+
+  dispatch({
+    type: UPDATE_USER_INFO,
+    payload: { ...userInfo }
   });
 };
 

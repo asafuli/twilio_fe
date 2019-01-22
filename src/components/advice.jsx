@@ -1,6 +1,6 @@
 import React, { Component, lazy, Suspense } from 'react';
 import { connect } from 'react-redux';
-import { toggleMessages } from './../redux/actions/index';
+import { toggleMessages, updateNavClass } from './../redux/actions/index';
 import { getUserInfo } from '../services/userService';
 
 const MapStateToProps = ({ showMessages, message, resource, user }) => {
@@ -9,23 +9,20 @@ const MapStateToProps = ({ showMessages, message, resource, user }) => {
 
 function MapDispatchToProps(dispatch, ownProps) {
   return {
-    toggleMessages: () => dispatch(toggleMessages(ownProps))
+    toggleMessages: () => dispatch(toggleMessages(ownProps)),
+    updateUserInfo: () => dispatch(updateUserInfo(ownProps))
   };
 }
 
 class connectedAdvice extends Component {
   state = {
-    advice: '',
-    // user: '',
-    // resource: '',
-    // message: [],
     secondsToFlight: 0
   };
 
   async componentDidMount() {
     // const uid = this.props.uid ? this.props.uid : this.props.match.params.id;
     // const userInfo = await getUserInfo(uid);
-    // this.setState(userInfo);
+    updateUserInfo();
     const targetDate = new Date(2019, 4, 13, 12, 0, 0);
     this.secondsTimer = setInterval(this.countdown, 1000, targetDate);
   }
@@ -73,7 +70,7 @@ class connectedAdvice extends Component {
                   click below to checkout you messages history from #
                   {resource.replace('whatsapp:+972', '0')}{' '}
                 </h1>
-                <button type='submit' onClick={this.props.toggleShowMsg}>
+                <button type='submit' onClick={this.props.toggleMessages}>
                   clickMe
                 </button>
               </header>
