@@ -1,10 +1,9 @@
 import React, { Component, lazy, Suspense } from 'react';
 import { connect } from 'react-redux';
 import { toggleMessages, updateUserInfo } from './../redux/actions/index';
-import adviceReducer from './../redux/reducers/adviceReducer';
 
 const MapStateToProps = ({
-  adviceReducer: { showMessages, message, resource, user, advice }
+  userReducer: { showMessages = false, message, resource, user, advice }
 }) => {
   return { showMessages, message, resource, user, advice };
 };
