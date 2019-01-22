@@ -1,7 +1,6 @@
 import React, { Component, lazy, Suspense } from 'react';
 import { connect } from 'react-redux';
-import { toggleMessages, updateNavClass } from './../redux/actions/index';
-import { getUserInfo } from '../services/userService';
+import { toggleMessages, updateUserInfo } from './../redux/actions/index';
 
 const MapStateToProps = ({ showMessages, message, resource, user }) => {
   return { showMessages, message, resource, user };
