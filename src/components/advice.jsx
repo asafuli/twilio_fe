@@ -3,29 +3,29 @@ import { connect } from 'react-redux';
 import { toggleMessages } from './../redux/actions/index';
 import { getUserInfo } from '../services/userService';
 
-const MapStateToProps = state => {
-  return { showMessages: state.showMessages };
+const MapStateToProps = ({ showMessages, message, resource, user }) => {
+  return { showMessages, message, resource, user };
 };
 
-function MapDispatchToProps(dispatch) {
+function MapDispatchToProps(dispatch, ownProps) {
   return {
-    toggleMessages: isMessagesShown => dispatch(toggleMessages(isMessagesShown))
+    toggleMessages: () => dispatch(toggleMessages(ownProps))
   };
 }
 
 class connectedAdvice extends Component {
   state = {
     advice: '',
-    user: '',
-    resource: '',
-    message: [],
+    // user: '',
+    // resource: '',
+    // message: [],
     secondsToFlight: 0
   };
 
   async componentDidMount() {
-    const uid = this.props.uid ? this.props.uid : this.props.match.params.id;
-    const userInfo = await getUserInfo(uid);
-    this.setState(userInfo);
+    // const uid = this.props.uid ? this.props.uid : this.props.match.params.id;
+    // const userInfo = await getUserInfo(uid);
+    // this.setState(userInfo);
     const targetDate = new Date(2019, 4, 13, 12, 0, 0);
     this.secondsTimer = setInterval(this.countdown, 1000, targetDate);
   }
@@ -42,15 +42,8 @@ class connectedAdvice extends Component {
     this.setState({ secondsToFlight });
   };
 
-  toggleShowMsg = async () => {
-    const uid = this.props.uid ? this.props.uid : this.props.match.params.id;
-    const userInfo = await getUserInfo(uid);
-    this.setState({ ...userInfo });
-    this.props.toggleMessages(this.props.showMessages);
-  };
-
   render() {
-    const { advice, user, resource, message } = this.state;
+    const { advice, user, resource, message } = this.props;
     return advice.length === 0 ? (
       <h1>Loading...</h1>
     ) : (
@@ -80,7 +73,7 @@ class connectedAdvice extends Component {
                   click below to checkout you messages history from #
                   {resource.replace('whatsapp:+972', '0')}{' '}
                 </h1>
-                <button type='submit' onClick={this.toggleShowMsg}>
+                <button type='submit' onClick={this.props.toggleShowMsg}>
                   clickMe
                 </button>
               </header>

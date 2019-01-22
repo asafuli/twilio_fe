@@ -16,6 +16,12 @@ function MapDispatchToProps(dispatch) {
 }
 
 class ConnectedApp extends Component {
+  state = {};
+
+  constructor(props) {
+    super(props);
+  }
+
   componentDidMount = () => {
     const pathArray = window.location.pathname.split('/');
     this.setState({ uid: pathArray[2] });

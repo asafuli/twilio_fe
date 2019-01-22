@@ -1,18 +1,25 @@
 import { TOGGLE_MESSAGES } from '../constants/action-types';
 import { UPDATE_NAV_CLASS } from '../constants/action-types';
+import { getUserInfo } from '../../services/userService';
 
-export function toggleMessages(payload) {
-  return { type: TOGGLE_MESSAGES, payload };
-}
+export const toggleMessages = ownProps => async (dispatch, getState) => {
+  const uid = ownProps.uid ? ownProps.uid : ownProps.match.params.id;
+  console.log('toggle messages - uid :', uid);
+  const userInfo = await getUserInfo(uid);
+  // this.setState({ ...userInfo });
+  // this.props.toggleMessages(this.props.showMessages);
+
+  dispatch({
+    type: TOGGLE_MESSAGES,
+    payload: {
+      showMessages: getState().adviceReducer.showMessages,
+      ...userInfo
+    }
+  });
+};
 
 export const updateNavClass = () => (dispatch, getState) => {
   let { lastScrollTop = 0 } = getState().navReducer;
-  console.log('window.pageYOffset', window.pageYOffset);
-  console.log(
-    'document.documentElement.scrollTop',
-    document.documentElement.scrollTop
-  );
-
   let st = window.pageYOffset || document.documentElement.scrollTop;
   let newNavBarClass = '';
   if (st > lastScrollTop) {

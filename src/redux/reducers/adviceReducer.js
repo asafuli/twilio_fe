@@ -11,7 +11,15 @@ const initialState = {
 
 function adviceReducer(state = initialState, action) {
   if (action.type === TOGGLE_MESSAGES) {
-    return { ...state, showMessages: !action.payload };
+    const { showMessages, advice, user, resource, message } = action.payload;
+    return {
+      ...state,
+      showMessages: !showMessages,
+      advice,
+      user,
+      resource,
+      message
+    };
   }
   return state;
 }
