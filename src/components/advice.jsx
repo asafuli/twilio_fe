@@ -1,9 +1,12 @@
 import React, { Component, lazy, Suspense } from 'react';
 import { connect } from 'react-redux';
 import { toggleMessages, updateUserInfo } from './../redux/actions/index';
+import adviceReducer from './../redux/reducers/adviceReducer';
 
-const MapStateToProps = ({ showMessages, message, resource, user }) => {
-  return { showMessages, message, resource, user };
+const MapStateToProps = ({
+  adviceReducer: { showMessages, message, resource, user, advice }
+}) => {
+  return { showMessages, message, resource, user, advice };
 };
 
 function MapDispatchToProps(dispatch, ownProps) {
@@ -40,7 +43,7 @@ class connectedAdvice extends Component {
 
   render() {
     const { advice, user, resource, message } = this.props;
-    return advice ? (
+    return advice.length === 0 ? (
       <h1>Loading...</h1>
     ) : (
       <div className='container'>
