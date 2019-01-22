@@ -6,21 +6,19 @@ import {
 import { getUserInfo } from '../../services/userService';
 
 export const toggleMessages = ownProps => (dispatch, getState) => {
-  // const uid = ownProps.uid ? ownProps.uid : ownProps.match.params.id;
-  // console.log('toggle messages - uid :', uid);
-  // const userInfo = await getUserInfo(uid);
   dispatch({
     type: TOGGLE_MESSAGES,
     payload: {
       showMessages: getState().adviceReducer.showMessages
     }
   });
+  console.log('calling user info');
   updateUserInfo(ownProps);
 };
 
 export const updateUserInfo = ownProps => async (dispatch, getState) => {
+  console.log('user info called');
   const uid = ownProps.uid ? ownProps.uid : ownProps.match.params.id;
-  console.log('update user info  - uid :', uid);
   const userInfo = await getUserInfo(uid);
 
   dispatch({
