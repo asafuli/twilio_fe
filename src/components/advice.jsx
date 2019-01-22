@@ -3,7 +3,8 @@ import { connect } from 'react-redux';
 import { toggleMessages, updateUserInfo } from './../redux/actions/index';
 
 const MapStateToProps = ({
-  userReducer: { showMessages = false, message, resource, user, advice }
+  userReducer: { message, resource, user, advice },
+  adviceReducer: { showMessages }
 }) => {
   return { showMessages, message, resource, user, advice };
 };

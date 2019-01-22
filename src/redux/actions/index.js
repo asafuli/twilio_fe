@@ -5,20 +5,17 @@ import {
 } from '../constants/action-types';
 import { getUserInfo } from '../../services/userService';
 
-export const toggleMessages = ownProps => async (dispatch, getState) => {
-  const uid = ownProps.uid ? ownProps.uid : ownProps.match.params.id;
-  console.log('toggle messages - uid :', uid);
-  const userInfo = await getUserInfo(uid);
-  // this.setState({ ...userInfo });
-  // this.props.toggleMessages(this.props.showMessages);
-
+export const toggleMessages = ownProps => (dispatch, getState) => {
+  // const uid = ownProps.uid ? ownProps.uid : ownProps.match.params.id;
+  // console.log('toggle messages - uid :', uid);
+  // const userInfo = await getUserInfo(uid);
   dispatch({
     type: TOGGLE_MESSAGES,
     payload: {
-      showMessages: getState().adviceReducer.showMessages,
-      ...userInfo
+      showMessages: getState().adviceReducer.showMessages
     }
   });
+  updateUserInfo(ownProps);
 };
 
 export const updateUserInfo = ownProps => async (dispatch, getState) => {
