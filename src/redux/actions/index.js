@@ -13,7 +13,7 @@ export const toggleMessages = ownProps => (dispatch, getState) => {
     }
   });
   console.log('calling user info');
-  updateUserInfo(ownProps);
+  return updateUserInfo(ownProps);
 };
 
 export const updateUserInfo = ownProps => async (dispatch, getState) => {
