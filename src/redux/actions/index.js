@@ -12,12 +12,10 @@ export const toggleMessages = ownProps => (dispatch, getState) => {
       showMessages: getState().adviceReducer.showMessages
     }
   });
-  console.log('calling user info');
-  return updateUserInfo(ownProps);
+  return dispatch(updateUserInfo(ownProps));
 };
 
 export const updateUserInfo = ownProps => async (dispatch, getState) => {
-  console.log('user info called');
   const uid = ownProps.uid ? ownProps.uid : ownProps.match.params.id;
   const userInfo = await getUserInfo(uid);
 
