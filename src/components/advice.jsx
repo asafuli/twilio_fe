@@ -1,6 +1,7 @@
-import React, { Component, lazy, Suspense } from 'react';
+import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { toggleMessages, updateUserInfo } from './../redux/actions/index';
+import { withRouter } from 'react-router-dom';
 
 const MapStateToProps = ({
   userReducer: { message, resource, user, advice },
@@ -231,9 +232,11 @@ class connectedAdvice extends Component {
   }
 }
 
-const Advice = connect(
-  MapStateToProps,
-  MapDispatchToProps
-)(connectedAdvice);
+const Advice = withRouter(
+  connect(
+    MapStateToProps,
+    MapDispatchToProps
+  )(connectedAdvice)
+);
 
 export default Advice;

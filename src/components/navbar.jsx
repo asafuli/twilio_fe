@@ -1,7 +1,6 @@
 import React from 'react';
-import { NavLink } from 'react-router-dom';
+import { NavLink, withRouter } from 'react-router-dom';
 import { connect } from 'react-redux';
-import navReducer from './../redux/reducers/navReducer';
 
 const MapStateToProps = state => {
   const { navBarClass, lastScrollTop } = state.navReducer;
@@ -64,5 +63,5 @@ const ConnectedNavBar = props => {
   );
 };
 
-const NavBar = connect(MapStateToProps)(ConnectedNavBar);
+const NavBar = withRouter(connect(MapStateToProps)(ConnectedNavBar));
 export default NavBar;

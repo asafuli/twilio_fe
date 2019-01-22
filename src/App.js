@@ -5,7 +5,7 @@ import NavBar from './components/navbar';
 import Map from './components/map';
 import PersonalInfo from './components/PersonalInfo';
 import styledAccomodation from './components/accomodation';
-import { Route, Switch } from 'react-router-dom';
+import { Route, Switch, withRouter } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { updateNavClass } from './redux/actions/index';
 
@@ -17,10 +17,6 @@ function MapDispatchToProps(dispatch) {
 
 class ConnectedApp extends Component {
   state = {};
-
-  constructor(props) {
-    super(props);
-  }
 
   componentDidMount = () => {
     const pathArray = window.location.pathname.split('/');
@@ -60,9 +56,11 @@ class ConnectedApp extends Component {
   }
 }
 
-const App = connect(
-  null,
-  MapDispatchToProps
-)(ConnectedApp);
+const App = withRouter(
+  connect(
+    null,
+    MapDispatchToProps
+  )(ConnectedApp)
+);
 
 export default App;
