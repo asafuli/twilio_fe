@@ -9,7 +9,8 @@ const rootReducer = combineReducers({
   navReducer,
   adviceReducer,
   userReducer,
-  UIDReducer
+  UIDReducer,
+  timerReducer
 });
 
 export default rootReducer;

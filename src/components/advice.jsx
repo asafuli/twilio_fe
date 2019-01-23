@@ -1,27 +1,29 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { toggleMessages, updateUserInfo } from './../redux/actions/index';
+import {
+  toggleMessages,
+  updateUserInfo,
+  updateTimer
+} from './../redux/actions/index';
 import { withRouter } from 'react-router-dom';
 
 const MapStateToProps = ({
   userReducer: { message, resource, user, advice },
-  adviceReducer: { showMessages }
+  adviceReducer: { showMessages },
+  timerReducer: { timer }
 }) => {
-  return { showMessages, message, resource, user, advice };
+  return { timer, showMessages, message, resource, user, advice };
 };
 
 function MapDispatchToProps(dispatch, ownProps) {
   return {
     toggleMessages: () => dispatch(toggleMessages(ownProps)),
-    updateUserInfo: () => dispatch(updateUserInfo(ownProps))
+    updateUserInfo: () => dispatch(updateUserInfo(ownProps)),
+    updateTimer: timer => dispatch(updateTimer(timer))
   };
 }
 
 class connectedAdvice extends Component {
-  state = {
-    secondsToFlight: 0
-  };
-
   async componentDidMount() {
     this.props.updateUserInfo();
     const targetDate = new Date(2019, 4, 13, 12, 0, 0);
@@ -34,14 +36,14 @@ class connectedAdvice extends Component {
 
   countdown = targetDate => {
     const currentDate = new Date();
-    const secondsToFlight = Math.ceil(
+    const timer = Math.ceil(
       (targetDate.valueOf() - currentDate.valueOf()) / 1000
     );
-    this.setState({ secondsToFlight });
+    this.props.updateTimer(timer);
   };
 
   render() {
-    const { advice, user, resource, message } = this.props;
+    const { timer, advice, user, resource, message } = this.props;
     return advice.length === 0 ? (
       <h1>Loading...</h1>
     ) : (
@@ -60,11 +62,8 @@ class connectedAdvice extends Component {
               <header className='special'>
                 <h1>
                   {' '}
-                  Only{' '}
-                  <span className='animated-timer'>
-                    {this.state.secondsToFlight}
-                  </span>{' '}
-                  seconds left until your Black forest experience...
+                  Only <span className='animated-timer'>{timer}</span> seconds
+                  left until your Black forest experience...
                 </h1>
                 <h1>
                   {' '}

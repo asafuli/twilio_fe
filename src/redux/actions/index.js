@@ -49,8 +49,8 @@ export const updateNavClass = () => (dispatch, getState) => {
 };
 
 /*---------------------updateTimer------------------------*/
-export const updateTimer = () => {
-  return { type: UPDATE_TIMER, payload: {} };
+export const updateTimer = timer => {
+  return { type: UPDATE_TIMER, payload: { timer } };
 };
 /*---------------------updateUID------------------------*/
 
