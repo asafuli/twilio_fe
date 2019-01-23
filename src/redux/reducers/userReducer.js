@@ -7,7 +7,7 @@ const initialState = {
   message: []
 };
 
-function adviceReducer(state = initialState, action) {
+function userReducer(state = initialState, action) {
   if (action.type === UPDATE_USER_INFO) {
     const { advice, user, resource, message } = action.payload;
     return {
@@ -21,4 +21,4 @@ function adviceReducer(state = initialState, action) {
   return state;
 }
 
-export default adviceReducer;
+export default userReducer;

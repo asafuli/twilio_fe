@@ -7,3 +7,5 @@ const UIDReducer = (state = { uid: 0 }, action) => {
   }
   return state;
 };
+
+export default UIDReducer;
