@@ -2,7 +2,7 @@ import React from 'react';
 import {
   withScriptjs,
   withGoogleMap,
-   GoogleMap,
+  GoogleMap,
   Marker
 } from 'react-google-maps';
 import SideBar from './sideBar';
@@ -35,7 +35,7 @@ const StyledSideBar = styled(SideBar)`
 const Map = props => {
   return (
     <div className='gallery map-container'>
-      <StyledSideBar className='styled-side-bar'/>
+      <StyledSideBar className='styled-side-bar' />
       <StyledMapComponent
         className='styled-map-component'
         isMarkerShown

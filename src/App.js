@@ -7,20 +7,24 @@ import PersonalInfo from './components/PersonalInfo';
 import styledAccomodation from './components/accomodation';
 import { Route, Switch, withRouter } from 'react-router-dom';
 import { connect } from 'react-redux';
-import { updateNavClass } from './redux/actions/index';
+import { updateNavClass, updateUID } from './redux/actions/index';
+
+function mapStateToProps({ UIDReducer: { uid } }) {
+  return { uid };
+}
 
 function MapDispatchToProps(dispatch) {
   return {
-    updateNavClass: () => dispatch(updateNavClass())
+    updateNavClass: () => dispatch(updateNavClass()),
+    updateUID: uid => dispatch(updateUID(uid))
   };
 }
 
 class ConnectedApp extends Component {
-  state = {};
-
   componentDidMount = () => {
     const pathArray = window.location.pathname.split('/');
-    this.setState({ uid: pathArray[2] });
+    this.props.updateUID(pathArray[2]);
+    //this.setState({ uid: pathArray[2] });
 
     window.addEventListener('scroll', this.props.updateNavClass);
   };
@@ -42,12 +46,12 @@ class ConnectedApp extends Component {
             <Route
               exact
               path='/home'
-              render={props => <Advice {...props} uid={this.state.uid} />}
+              render={props => <Advice {...props} uid={this.props.uid} />}
             />
             <Route
               exact
               path='/myList'
-              render={props => <PersonalInfo {...props} uid={this.state.uid} />}
+              render={props => <PersonalInfo {...props} uid={this.props.uid} />}
             />
           </Switch>
         </header>
@@ -58,7 +62,7 @@ class ConnectedApp extends Component {
 
 const App = withRouter(
   connect(
-    null,
+    mapStateToProps,
     MapDispatchToProps
   )(ConnectedApp)
 );
