@@ -7,7 +7,7 @@ const authEndPoint = '/auth';
 //http.setJwt(getJwt());
 
 export async function login(email, password, cookies) {
-  const { data: jwt } = await http.post(`${config.serverUrl}${uid}`, {
+  const { data: jwt } = await http.post(`${config.serverUrl}${authEndPoint}`, {
     email,
     password
   });
