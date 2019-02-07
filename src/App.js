@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import Advice from './components/advice';
 import Flight from './components/flight';
 import NavBar from './components/navbar';
+import LoginForm from './components/loginForm';
 import Map from './components/map';
 import PersonalInfo from './components/PersonalInfo';
 import styledAccomodation from './components/accomodation';
@@ -43,6 +44,7 @@ class ConnectedApp extends Component {
             <Route exact path='/flight' component={Flight} />
             <Route exact path='/accomodation' component={styledAccomodation} />
             <Route exact path='/map' component={Map} />
+            <Route exact path='/login' component={LoginForm} />
             <Route
               exact
               path='/home'
