@@ -2,6 +2,7 @@ import React from 'react';
 import Joi from 'joi-browser';
 import Form from './common/form';
 import auth from '../services/authService';
+import logger from '../services/loggerService';
 import { withCookies, Cookies } from 'react-cookie';
 
 class LoginForm extends Form {
