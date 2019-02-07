@@ -1,5 +1,6 @@
 import axios from 'axios';
 import { toast } from 'react-toastify';
+import logger from './loggerService';
 
 //axios.defaults.baseURL = config.serverUrl;
 
