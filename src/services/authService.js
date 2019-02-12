@@ -11,7 +11,7 @@ export async function login(email, password, cookies) {
     email,
     password
   });
-  console.log(data);
+  console.log('POSTTTTTTTTTTTTTTTTTTTTT:::::', data);
   //localStorage.setItem('token', jwt);
 }
 
