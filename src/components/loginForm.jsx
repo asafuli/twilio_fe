@@ -38,7 +38,7 @@ class LoginForm extends Form {
 
       //console.log(this.props.allCookies);
 
-      window.location = state ? state.from.pathname : '/home';
+      //window.location = state ? state.from.pathname : '/home';
     } catch (ex) {
       if (ex.response && ex.response.status === 400) {
         const errors = { ...this.state.errors };
