@@ -3,9 +3,13 @@ import Joi from 'joi-browser';
 import Form from './common/form';
 import auth from '../services/authService';
 import logger from '../services/loggerService';
+import { connect } from 'react-redux';
+import { withRouter } from 'react-router-dom';
 import { withCookies, Cookies } from 'react-cookie';
 
-class LoginForm extends Form {
+const mapStateToProps = ({ userReducer: resource }) => resource;
+
+class connectedLoginForm extends Form {
   state = {
     /*Note: For controlled elements - we have to initialize the state with some value 
    (null or undefined are considrered by React as uncontrolloed elements)
@@ -26,7 +30,7 @@ class LoginForm extends Form {
   doSubmit = async () => {
     try {
       const { data } = this.state;
-      await auth.login(data.username, data.password);
+      await auth.login(data.username, data.password, this.props.resource);
 
       /* commenting the below and instead calling window.location 
          to perform a full reload of the App after login in order
@@ -62,6 +66,8 @@ class LoginForm extends Form {
     );
   }
 }
+
+const LoginForm = withRouter(connect(connectedLoginForm));
 
 export default LoginForm;
 //export default withCookies(LoginForm);
