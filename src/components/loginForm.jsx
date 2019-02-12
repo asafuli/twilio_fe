@@ -67,12 +67,7 @@ class connectedLoginForm extends Form {
   }
 }
 
-const LoginForm = withRouter(
-  connect(
-    mapStateToProps,
-    connectedLoginForm
-  )
-);
+const LoginForm = withRouter(connect(mapStateToProps)(connectedLoginForm));
 
 export default LoginForm;
 //export default withCookies(LoginForm);

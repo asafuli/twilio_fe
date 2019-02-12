@@ -229,11 +229,7 @@ class connectedAdvice extends Component {
   }
 }
 
-const Advice = withRouter(
-  connect(
-    MapStateToProps,
-    MapDispatchToProps
-  )(connectedAdvice)
+const Advice = withRouter(connect(MapStateToProps,MapDispatchToProps)(connectedAdvice)
 );
 
 export default Advice;
