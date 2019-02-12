@@ -7,11 +7,12 @@ const authEndPoint = '/auth';
 //http.setJwt(getJwt());
 
 export async function login(email, password, cookies) {
-  const { data: jwt } = await http.post(`${config.serverUrl}${authEndPoint}`, {
+  const { data } = await http.post(`${config.serverUrl}${authEndPoint}`, {
     email,
     password
   });
-  localStorage.setItem('token', jwt);
+  console.log(data);
+  //localStorage.setItem('token', jwt);
 }
 
 export function loginWithJwt(jwt) {
