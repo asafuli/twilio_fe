@@ -2,11 +2,14 @@ import React from 'react';
 import { NavLink, withRouter } from 'react-router-dom';
 import { connect } from 'react-redux';
 
-const MapStateToProps = state => {
-  const { navBarClass, lastScrollTop } = state.navReducer;
+const MapStateToProps = ({
+  navReducer: { navBarClass, lastScrollTop },
+  userReducer: { user }
+}) => {
   return {
     navBarClass,
-    lastScrollTop
+    lastScrollTop,
+    user
   };
 };
 

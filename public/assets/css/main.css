@@ -3361,3 +3361,7 @@ body:after {
 .navbar-hidden {
   transform: translateY(-100%);
 }
+
+.navbar-right {
+  float: right;
+}
