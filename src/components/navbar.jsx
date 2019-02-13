@@ -60,7 +60,7 @@ const ConnectedNavBar = props => {
               </NavLink>
             </li>
           </ul>
-          <ul className='navbar-nav navbar-right'>
+          <ul className='navbar-nav navbar-right mr-auto'>
             <li className='nav-item'>
               <NavLink className='nav-link' to='/login'>
                 Login
