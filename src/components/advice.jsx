@@ -66,7 +66,7 @@ class connectedAdvice extends Component {
                   left until your Black forest experience...
                 </h1>
                 <button type='submit' onClick={this.props.toggleMessages}>
-                  {this.props.showMessages ? 'Hide' : 'Show'} message history
+                  {this.props.showMessages ? 'Hide' : 'Show'} Message History
                 </button>
               </header>
               {this.props.showMessages ? (
@@ -149,14 +149,22 @@ class connectedAdvice extends Component {
                   <img src='../images/pic06.jpg' alt='' />
                 </div>
                 <div className='inner'>
-                  <h3>Viverra Hendrerit</h3>
-                  <p>
-                    Curabitur eget semper ante. Morbi eleifend ultricies est, a
-                    blandit diam vehicula vel. Vestibulum porttitor nisi quis
-                    viverra hendrerit. Suspendisse vel volutpat nibh, vel
-                    elementum lacus. Maecenas commodo pulvinar dui, at cursus
-                    metus imperdiet vel.
-                  </p>
+                  <h3>היער השחור גרמניה</h3>
+                  <a
+                    target='_blank'
+                    rel='noopener noreferrer'
+                    href='https://www.xn--6dbdabdlme8buq6edbk.com/'
+                  >
+                    <p>
+                      קודם כל – מידע מדויק, ברור ושאינו מוטה, שיעזור לכם לתכנן
+                      טיול בעצמכם ליער השחור. למשל: טיפים על מתי להגיע ולאן
+                      לטוס, איפה כדאי ללון? מפת הכפרים והאטרקציות, המלצות על
+                      טיול עם ילדים, מידע על מזג האוויר, מידע על כרטיסי הטבות של
+                      היער השחור, סיפורים ומסלולי טיול של מטיילים כמוכם, מדריכים
+                      גדולים על קניות, על ניווט וטלפון, על כשרות, על בניית
+                      מסלולי טיול, המלצות שונות ועוד... קרא עוד
+                    </p>
+                  </a>
                 </div>
               </div>
               <div className='spotlight alt'>
