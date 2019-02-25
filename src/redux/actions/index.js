@@ -59,7 +59,7 @@ export const updateUID = uid => {
   return { type: UPDATE_UID, payload: { uid } };
 };
 
-export const toggleUserLogin = (dispatch, getState) => {
+export const toggleUserLogin = () => (dispatch, getState) => {
   console.log('TOGGLE USER LOGIN ACTION CALLED');
   dispatch({
     type: TOGGLE_USER_LOGIN,
