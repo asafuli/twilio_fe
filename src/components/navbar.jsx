@@ -1,7 +1,6 @@
 import React from 'react';
 import { NavLink, withRouter } from 'react-router-dom';
 import { connect } from 'react-redux';
-import loginReducer from './../redux/reducers/loginReducer';
 
 const MapStateToProps = ({
   navReducer: { navBarClass, lastScrollTop },
@@ -80,11 +79,13 @@ const ConnectedNavBar = props => {
           {props.loggedIn && (
             <ul className='navbar-nav navbar-right'>
               <li className='nav-item'>
-                <NavLink className='nav-link' to='/home'>
+                <NavLink className='nav-link' to='/Logout'>
                   Logout
                 </NavLink>
               </li>
-              <li className='nav-item'>{props.user}</li>
+              <navLink className='nav-link' to='/home'>
+                <li className='nav-item'>{props.user}</li>
+              </navLink>
             </ul>
           )}
         </div>

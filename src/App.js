@@ -45,6 +45,7 @@ class ConnectedApp extends Component {
             <Route exact path='/accomodation' component={styledAccomodation} />
             <Route exact path='/map' component={Map} />
             <Route exact path='/login' component={LoginForm} />
+            <Route exact path='/logout' component={Logout} />
             <Route
               exact
               path='/home'
