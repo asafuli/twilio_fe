@@ -36,7 +36,7 @@ const ConnectedNavBar = props => {
         </button>
         <div className='collapse navbar-collapse' id='navbarNav'>
           <ul className='navbar-nav'>
-            <li className='nav-item active'>
+            <li className='nav-item '>
               <NavLink className='nav-link' to='/flight'>
                 Flight
               </NavLink>
@@ -79,13 +79,15 @@ const ConnectedNavBar = props => {
           {props.loggedIn && (
             <ul className='navbar-nav navbar-right'>
               <li className='nav-item'>
+                <navLink className='nav-link active' to='/home'>
+                  {props.user}
+                </navLink>
+              </li>
+              <li className='nav-item'>
                 <NavLink className='nav-link' to='/Logout'>
                   Logout
                 </NavLink>
               </li>
-              <navLink className='nav-link' to='/home'>
-                <li className='nav-item'>{props.user}</li>
-              </navLink>
             </ul>
           )}
         </div>
