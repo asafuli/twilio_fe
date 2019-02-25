@@ -172,14 +172,29 @@ class connectedAdvice extends Component {
                   <img src='../images/pic07.jpg' alt='' />
                 </div>
                 <div className='inner'>
-                  <h3>Curabitur Eget</h3>
-                  <p>
-                    Curabitur eget semper ante. Morbi eleifend ultricies est, a
-                    blandit diam vehicula vel. Vestibulum porttitor nisi quis
-                    viverra hendrerit. Suspendisse vel volutpat nibh, vel
-                    elementum lacus. Maecenas commodo pulvinar dui, at cursus
-                    metus imperdiet vel.
-                  </p>
+                  <h3>היער השחור - למטייל</h3>
+                  <a
+                    target='_blank'
+                    rel='noopener noreferrer'
+                    href='https://www.lametayel.co.il/%D7%99%D7%A2%D7%A8+%D7%94%D7%A9%D7%97%D7%95%D7%A8'
+                  >
+                    <p>
+                      קודם כל – מידע מדויק, ברור ושאינו מוטה, שיעזור לכם
+                      לתכנןהיער השחור (Black Forest) או כפי שהוא נקרא בגרמנית
+                      ה-Schwarzwald, הוא אחד מיעדי התיירות המובילים של גרמניה
+                      וכדאי אף לשלב אותו בטיול במדינות שוויץ, אוסטריה או צרפת.
+                      עיקר העניין באזור זה, כמתבקש משמו, הוא הטבע והנופים. היער
+                      השחור הוא אחד היערות המרתקים, הצבעונים והמגוונים ביותר
+                      בעולם. הטיול ברחבי היער השחור יזמן לכם מפגש עם ערים וכפרים
+                      ציוריים, תושבים חברותיים, פולקלור, אגמים ובעיקר שעוני
+                      קוקיה - היער השחור מפורסם במלאכת הכנת שעוני הקוקיה ולרוחב
+                      האזור ודאי תיתקלו באינספור בתי מלאכה שכאלה. ללא ספק זו
+                      תהיה המזכרת הטובה ביותר שתוכלו להביא מהאזור. הערים
+                      באדן-באדן ו-פרייבורג הן הערים המרכזיות והיפות באזור בעוד
+                      האגמים היפים ביותר כאן הם טיטיזי (Titisee) ואגם קונסטנץ,
+                      במרחק לא רב.... קרא עוד
+                    </p>
+                  </a>
                 </div>
               </div>
               <div className='spotlight'>
@@ -187,14 +202,19 @@ class connectedAdvice extends Component {
                   <img src='../images/pic08.jpg' alt='' />
                 </div>
                 <div className='inner'>
-                  <h3>Morbi Eleifend</h3>
-                  <p>
-                    Curabitur eget semper ante. Morbi eleifend ultricies est, a
-                    blandit diam vehicula vel. Vestibulum porttitor nisi quis
-                    viverra hendrerit. Suspendisse vel volutpat nibh, vel
-                    elementum lacus. Maecenas commodo pulvinar dui, at cursus
-                    metus imperdiet vel.
-                  </p>
+                  <h3> Go Travel - היער השחור </h3>
+                  <a
+                    target='_blank'
+                    rel='noopener noreferrer'
+                    href='https://www.gotravel.co.il/travel/?p=2599'
+                  >
+                    <p>
+                      היער השחור בדרום-מערב גרמניה, מיעדי התיירות המובילים
+                      באירופה, מוצף תיירים וגם לא מעט מלכודות תיירים. מומלץ
+                      לתכנן את הביקור ביער השחור הרחק מהמוני התיירים , בטיול
+                      אקטיבי וחוויתי... קרא עוד
+                    </p>
+                  </a>
                 </div>
               </div>
             </section>
