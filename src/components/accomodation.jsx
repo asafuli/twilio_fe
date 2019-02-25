@@ -46,7 +46,7 @@ const styledAccomodation = styled(Accomodation)`
     color: grey;
     font-weight: bold;
     list-style-type: none;
-    width: 60%;
+    width: 30%;
   }
 
   .info-link-item {
