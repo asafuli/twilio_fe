@@ -46,16 +46,16 @@ const styledAccomodation = styled(Accomodation)`
     color: grey;
     font-weight: bold;
     list-style-type: none;
-    width: 30%;
+    width: 60%;
   }
 
   .info-link-item {
+    background: white;
     font-size: 1em;
     margin: 1em;
     padding: 0.25em 1em;
     border: 2px solid grey;
     border-radius: 3px;
-    width: 30%;
   }
 `;
 
