@@ -3366,3 +3366,8 @@ body:after {
   display: flex;
   justify-content: space-between;
 }
+
+.messages-list {
+  font: initial;
+  font-size: 2rem;
+}

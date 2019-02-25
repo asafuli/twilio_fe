@@ -59,7 +59,7 @@ class connectedAdvice extends Component {
               <div className='image fit flush'>
                 <img src='../images/pic02.jpg' alt='' />
               </div>
-              <header className='special'>
+              <header className='special messages-list'>
                 <h1>
                   {' '}
                   Only <span className='animated-timer'>{timer}</span> seconds
