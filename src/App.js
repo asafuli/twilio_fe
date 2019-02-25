@@ -3,6 +3,7 @@ import Advice from './components/advice';
 import Flight from './components/flight';
 import NavBar from './components/navbar';
 import LoginForm from './components/loginForm';
+import Logout from './components/logout';
 import Map from './components/map';
 import PersonalInfo from './components/PersonalInfo';
 import styledAccomodation from './components/accomodation';
