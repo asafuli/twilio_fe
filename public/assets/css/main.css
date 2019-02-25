@@ -2260,7 +2260,7 @@ textarea {
   outline: 0;
   padding: 0 1rem;
   text-decoration: none;
-  width: 100%;
+  width: 30%;
 }
 
 input[type='text']:invalid,
@@ -3367,8 +3367,11 @@ body:after {
   justify-content: space-between;
 }
 
-.timer-title{
-  font:initial;
-  font-size:2rem
+.timer-title {
+  font: initial;
+  font-size: 2rem;
 }
 
+.login-form {
+  margin: 0rem 0rem 0rem 3rem;
+}
