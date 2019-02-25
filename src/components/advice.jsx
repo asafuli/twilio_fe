@@ -65,13 +65,8 @@ class connectedAdvice extends Component {
                   Only <span className='animated-timer'>{timer}</span> seconds
                   left until your Black forest experience...
                 </h1>
-                <h1 className='msg-list'>
-                  {' '}
-                  click below to checkout you messages history from #
-                  {resource.replace('whatsapp:+972', '0')}{' '}
-                </h1>
                 <button type='submit' onClick={this.props.toggleMessages}>
-                  click Me
+                  {this.props.showMessages ? 'Hide' : 'Show'} message history
                 </button>
               </header>
               {this.props.showMessages ? (
