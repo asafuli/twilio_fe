@@ -3,7 +3,8 @@ import {
   UPDATE_USER_INFO,
   UPDATE_NAV_CLASS,
   UPDATE_TIMER,
-  UPDATE_UID
+  UPDATE_UID,
+  TOGGLE_USER_LOGIN
 } from '../constants/action-types';
 import { getUserInfo } from '../../services/userService';
 
@@ -56,4 +57,13 @@ export const updateTimer = timer => {
 
 export const updateUID = uid => {
   return { type: UPDATE_UID, payload: { uid } };
+};
+
+export const toggleUserLogin = (dispatch, getState) => {
+  return {
+    type: TOGGLE_USER_LOGIN,
+    payload: {
+      loggedIn: getState().loginReducer.loggedIn
+    }
+  };
 };

@@ -25,30 +25,9 @@ class Form extends Component {
       errors[item.path[0]] = item.message;
     }
     return errors;
-    //example for basic validation without using JOI
-    // const errors ={};
-    // const {data} = this.state;
-    // if (data.username.trim() === "") {
-    //   errors.username = "Username is required."
-    // }
-    // if (data.password.trim() === "") {
-    //   errors.password = "Password is required."
-    // }
-    // return Object.keys(errors).length === 0 ? null : errors;
   };
 
   validateProperty = ({ name, value }) => {
-    // Basic validation without JOI
-    // if (name === "username"){
-    //   if (value.trim() === "" ){
-    //     return "Username is required"
-    //   }
-    // }
-    // if (name === "password"){
-    //   if (value.trim() === "" ){
-    //     return "Password is required"
-    //   }
-    // }
     const validateObj = { [name]: value };
     const schema = { [name]: this.schema[name] };
     const result = Joi.validate(validateObj, schema);

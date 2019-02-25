@@ -3,11 +3,17 @@ import Joi from 'joi-browser';
 import Form from './common/form';
 import auth from '../services/authService';
 import logger from '../services/loggerService';
+import { toggleUserLogin } from './../redux/actions/index';
 import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom';
 import { withCookies, Cookies } from 'react-cookie';
 
 const mapStateToProps = ({ userReducer: resource }) => resource;
+const MapDispatchToProps = (dispatch, ownProps) => {
+  return {
+    toggleUserLogin: () => dispatch(toggleUserLogin())
+  };
+};
 
 class connectedLoginForm extends Form {
   state = {
@@ -36,8 +42,8 @@ class connectedLoginForm extends Form {
          to perform a full reload of the App after login in order
          to call 'componentDidMount again in App.js'  
       this.props.history.push('/');
-      
       */
+      this.props.toggleUserLogin();
       const { state } = this.props.location;
 
       //console.log(this.props.allCookies);
