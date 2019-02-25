@@ -3367,7 +3367,17 @@ body:after {
   justify-content: space-between;
 }
 
-.messages-list {
-  font: initial;
-  font-size: 2rem;
+.timer-title{
+  font:initial;
+  font-size:2rem
+}
+
+.msg-list{
+  font:initial;
+  font-size:2rem
+}
+
+.msg-history{
+  font:initial;
+  font-size:1rem
 }

@@ -59,26 +59,26 @@ class connectedAdvice extends Component {
               <div className='image fit flush'>
                 <img src='../images/pic02.jpg' alt='' />
               </div>
-              <header className='special messages-list'>
-                <h1>
+              <header className='special'>
+                <h1 className='timer-title'>
                   {' '}
                   Only <span className='animated-timer'>{timer}</span> seconds
                   left until your Black forest experience...
                 </h1>
-                <h1>
+                <h1 className='msg-list'>
                   {' '}
                   click below to checkout you messages history from #
                   {resource.replace('whatsapp:+972', '0')}{' '}
                 </h1>
                 <button type='submit' onClick={this.props.toggleMessages}>
-                  clickMe
+                  click Me
                 </button>
               </header>
               {this.props.showMessages ? (
                 <div className='content'>
-                  <ul>
+                  <ul className='msg-history'>
                     {message.map((msg, idx) => {
-                      if (msg.toLowerCase().includes('www')) {
+                      if (msg.toLowerCase().includes('www.')) {
                         return (
                           <div key={idx}>
                             <li>
@@ -229,7 +229,11 @@ class connectedAdvice extends Component {
   }
 }
 
-const Advice = withRouter(connect(MapStateToProps,MapDispatchToProps)(connectedAdvice)
+const Advice = withRouter(
+  connect(
+    MapStateToProps,
+    MapDispatchToProps
+  )(connectedAdvice)
 );
 
 export default Advice;
