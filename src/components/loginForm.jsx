@@ -41,13 +41,12 @@ class connectedLoginForm extends Form {
       /* commenting the below and instead calling window.location 
          to perform a full reload of the App after login in order
          to call 'componentDidMount again in App.js'  
-      this.props.history.push('/');
+        this.props.history.push('/');
       */
       this.props.toggleUserLogin();
-      const { state } = this.props.location;
+      this.props.history.push('/home');
 
       //console.log(this.props.allCookies);
-
       //window.location = state ? state.from.pathname : '/home';
     } catch (ex) {
       if (ex.response && ex.response.status === 400) {
