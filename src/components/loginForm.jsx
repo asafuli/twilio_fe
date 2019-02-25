@@ -9,7 +9,7 @@ import { withRouter } from 'react-router-dom';
 import { withCookies, Cookies } from 'react-cookie';
 
 const mapStateToProps = ({ userReducer: resource }) => resource;
-const MapDispatchToProps = (dispatch, ownProps) => {
+const MapDispatchToProps = dispatch => {
   return {
     toggleUserLogin: () => dispatch(toggleUserLogin())
   };

@@ -61,10 +61,10 @@ export const updateUID = uid => {
 
 export const toggleUserLogin = (dispatch, getState) => {
   console.log('TOGGLE USER LOGIN ACTION CALLED');
-  return {
+  dispatch({
     type: TOGGLE_USER_LOGIN,
     payload: {
       loggedIn: getState().loginReducer.loggedIn
     }
-  };
+  });
 };
