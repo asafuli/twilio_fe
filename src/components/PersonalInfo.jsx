@@ -9,9 +9,7 @@ const PersonalInfo = ({ uid }) => {
   const socket = io(config.serverUrl);
 
   socket.on('chat message', msg => {
-    console.log(msg);
-    console.log(chatMessages);
-    setChatMessages(chatMessages.push(msg));
+    setChatMessages([...chatMessages, msg]);
     console.log(chatMessages);
   });
 
