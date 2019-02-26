@@ -24,7 +24,7 @@ const PersonalInfo = ({ uid }) => {
   };
 
   return (
-    <div>
+    <div className='chat'>
       <p>{uid}</p>
       <form onSubmit={e => handleSubmit(e)}>
         <input
