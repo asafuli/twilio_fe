@@ -35,7 +35,7 @@ const PersonalInfo = ({ uid }) => {
         <input type='submit' value='Send' />
       </form>
       <h3>Chat messages!</h3>
-      {/* <ul>{chatMessages && chatMessages.map(msg => <li>msg</li>)}</ul> */}
+      <ul>{chatMessages && chatMessages.map(msg => <li>msg</li>)}</ul>
     </div>
   );
 };
