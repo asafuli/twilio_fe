@@ -57,8 +57,8 @@ const ConnectedNavBar = props => {
               </NavLink>
             </li>
             <li className='nav-item'>
-              <NavLink className='nav-link' to='/myList'>
-                My links
+              <NavLink className='nav-link' to='/chat'>
+                Chat
               </NavLink>
             </li>
           </ul>

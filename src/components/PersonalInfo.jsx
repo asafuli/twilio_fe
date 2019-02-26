@@ -1,10 +1,14 @@
 import React, { useState, useEffect } from 'react';
+import { connect } from 'react-redux';
+import { withRouter } from 'react-router-dom';
 import io from 'socket.io-client';
 import config from '../config/config';
+import PersonalInfo from './PersonalInfo';
 
 const socket = io(config.serverUrl, { transports: ['websocket'] });
+const mapStateToProps = ({ loginReducer: loggedIn }) => loggedIn;
 
-const PersonalInfo = ({ uid }) => {
+const connectedPersonalInfo = props => {
   const [chatMessages, setChatMessages] = useState([]);
   const [currentMessage, setCurrentMessage] = useState('');
 
@@ -25,9 +29,11 @@ const PersonalInfo = ({ uid }) => {
     setCurrentMessage(e.target.value);
   };
 
-  return (
+  return !props.loggedIn ? (
+    <h1>Please login and start chatting!</h1>
+  ) : (
     <div className='chat'>
-      <p>{uid}</p>
+      <p>{props.uid}</p>
       <form onSubmit={e => handleSubmit(e)}>
         <input
           type='text'
@@ -44,5 +50,9 @@ const PersonalInfo = ({ uid }) => {
     </div>
   );
 };
+
+const PersonalInfo = withRouter(
+  connect(mapStateToProps)(connectedPersonalInfo)
+);
 
 export default PersonalInfo;

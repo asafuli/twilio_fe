@@ -54,7 +54,7 @@ class ConnectedApp extends Component {
             />
             <Route
               exact
-              path='/myList'
+              path='/chat'
               render={props => <PersonalInfo {...props} uid={this.props.uid} />}
             />
           </Switch>
