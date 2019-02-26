@@ -4,23 +4,24 @@ import config from '../config/config';
 
 const PersonalInfo = ({ uid }) => {
   const { chatMessages, setChatMessages } = useState([]);
+  const socket = io(config.serverUrl);
 
-  const chatConnect = () => {
-    const socket = io(config.serverUrl);
-    socket.on('chat message', msg => setChatMessages(chatMessages.push(msg)));
+  socket.on('chat message', msg => setChatMessages(chatMessages.push(msg)));
+
+  const handleSubmit = e => {
+    e.preventDefault();
+    socket.emit('chat message', e.value);
   };
+
   return (
     <div>
       <p>{uid}</p>
-      <button className='secondary' onClick={() => chatConnect()}>
-        Connect to chat
-      </button>
+      <form onSubmit={e => handleSubmit(e)}>
+        <input type='text' value='Type here...' />
+        <input type='submit' value='Send' />
+      </form>
       <h3>Chat messages!</h3>
-      <ul>
-        {chatMessages.map(msg => (
-          <li>msg</li>
-        ))}
-      </ul>
+      <ul>{chatMessages && chatMessages.map(msg => <li>msg</li>)}</ul>
     </div>
   );
 };
