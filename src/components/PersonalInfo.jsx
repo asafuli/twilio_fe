@@ -4,10 +4,16 @@ import config from '../config/config';
 
 const PersonalInfo = ({ uid }) => {
   const [chatMessages, setChatMessages] = useState([]);
+  console.log(chatMessages);
   const [currentMessage, setCurrentMessage] = useState('');
   const socket = io(config.serverUrl);
 
-  socket.on('chat message', msg => setChatMessages(chatMessages.push(msg)));
+  socket.on('chat message', msg => {
+    console.log(msg);
+    console.log(chatMessages);
+    setChatMessages(chatMessages.push(msg));
+    console.log(chatMessages);
+  });
 
   const handleSubmit = e => {
     e.preventDefault();
