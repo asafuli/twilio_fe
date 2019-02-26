@@ -17,11 +17,12 @@ const PersonalInfo = ({ uid }) => {
 
   const handleSubmit = e => {
     e.preventDefault();
-    socket.emit('chat message', e.value);
+    socket.emit('chat message', currentMessage);
+    setCurrentMessage('');
   };
 
   const handleChange = e => {
-    setCurrentMessage(e.value);
+    setCurrentMessage(e.target.value);
   };
 
   return (
@@ -31,7 +32,6 @@ const PersonalInfo = ({ uid }) => {
         <input
           type='text'
           value={currentMessage}
-          defaultValue='Type here...'
           onChange={e => handleChange(e)}
         />
         <input type='submit' value='Send' />
