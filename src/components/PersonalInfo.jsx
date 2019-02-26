@@ -3,7 +3,6 @@ import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom';
 import io from 'socket.io-client';
 import config from '../config/config';
-import PersonalInfo from './PersonalInfo';
 
 const socket = io(config.serverUrl, { transports: ['websocket'] });
 const mapStateToProps = ({ loginReducer: loggedIn }) => loggedIn;
