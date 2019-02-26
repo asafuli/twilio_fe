@@ -1,16 +1,18 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import io from 'socket.io-client';
 import config from '../config/config';
 
+const socket = io(config.serverUrl, { transports: ['websocket'] });
+
 const PersonalInfo = ({ uid }) => {
   const [chatMessages, setChatMessages] = useState([]);
-  console.log(chatMessages);
   const [currentMessage, setCurrentMessage] = useState('');
-  const socket = io(config.serverUrl, { transports: ['websocket'] });
 
-  socket.on('chat message', msg => {
-    setChatMessages([...chatMessages, msg]);
-    console.log(chatMessages);
+  useEffect(() => {
+    socket.on('chat message', msg => {
+      setChatMessages([...chatMessages, msg]);
+      console.log(chatMessages);
+    });
   });
 
   const handleSubmit = e => {
