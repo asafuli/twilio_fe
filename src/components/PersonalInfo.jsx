@@ -6,7 +6,7 @@ const PersonalInfo = ({ uid }) => {
   const [chatMessages, setChatMessages] = useState([]);
   console.log(chatMessages);
   const [currentMessage, setCurrentMessage] = useState('');
-  const socket = io(config.serverUrl);
+  const socket = io(config.serverUrl, { transports: ['websocket'] });
 
   socket.on('chat message', msg => {
     setChatMessages([...chatMessages, msg]);
