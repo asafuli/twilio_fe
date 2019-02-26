@@ -3,7 +3,8 @@ import io from 'socket.io-client';
 import config from '../config/config';
 
 const PersonalInfo = ({ uid }) => {
-  const { chatMessages, setChatMessages } = useState([]);
+  const [chatMessages, setChatMessages] = useState([]);
+  const [currentMessage, setCurrentMessage] = useState('');
   const socket = io(config.serverUrl);
 
   socket.on('chat message', msg => setChatMessages(chatMessages.push(msg)));
@@ -13,11 +14,20 @@ const PersonalInfo = ({ uid }) => {
     socket.emit('chat message', e.value);
   };
 
+  const handleChange = e => {
+    setCurrentMessage(e.value);
+  };
+
   return (
     <div>
       <p>{uid}</p>
       <form onSubmit={e => handleSubmit(e)}>
-        <input type='text' value='Type here...' />
+        <input
+          type='text'
+          value={currentMessage}
+          defaultValue='Type here...'
+          onChange={e => handleChange(e)}
+        />
         <input type='submit' value='Send' />
       </form>
       <h3>Chat messages!</h3>
