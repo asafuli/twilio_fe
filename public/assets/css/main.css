@@ -3455,11 +3455,10 @@ body:after {
 .chat-type-msg {
   background: skyblue !important;
   width: 70rem !important;
-  opacity: 0.3 !important;
-  height: 2rem !important;
+  opacity: 0.6 !important;
   border: black solid 2px !important;
+  margin: 10px !important;
 
-  line-height: 20px !important;
   color: black !important;
   font-weight: normal !important;
   font-size: 1em !important;
