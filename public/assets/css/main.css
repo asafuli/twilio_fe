@@ -3385,12 +3385,8 @@ body:after {
   display: flex;
   flex-flow: column wrap;
   align-items: center;
-  width: 80%;
-  height: 80%;
-  background: aliceblue;
-  opacity: 0.4;
-  border: black solid 2px;
-  padding: 2rem;
+  width: 100%;
+  height: 100%;
 }
 
 .chat-box {
@@ -3398,6 +3394,13 @@ body:after {
   flex-flow: column wrap;
   align-items: flex-start;
   justify-content: flex-start;
+
+  background: aliceblue;
+  opacity: 0.5;
+  width: 100%;
+  height: 100%;
+  border: black solid 2px;
+  padding: 2rem;
 }
 
 .chat-header {
