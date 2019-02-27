@@ -3430,7 +3430,7 @@ body:after {
   font-weight: normal;
   font-size: 1em;
   text-align: left;
-  padding: 0.2rem;
+  padding: 0.4rem;
 }
 
 .chat-msg-text {
@@ -3438,6 +3438,8 @@ body:after {
   font-weight: normal;
   font-size: 1em;
   text-align: left;
+  padding: 0.4rem;
+  margin-left: 0.2rem;
 }
 
 .chat-form {
