@@ -3426,10 +3426,11 @@ body:after {
 }
 
 .chat-username {
-  color: grey;
+  color: #383838;
   font-weight: normal;
   font-size: 1em;
   text-align: left;
+  padding: 0.2rem;
 }
 
 .chat-msg-text {
@@ -3473,8 +3474,3 @@ body:after {
   font-size: 2em;
   text-align: center;
 }
-
-/* 
-chat-submit-msg */
-/*.chat-uid .chat-form .chat-msg-list .chat-header {
-} */
