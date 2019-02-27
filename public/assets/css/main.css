@@ -3394,8 +3394,8 @@ body:after {
   justify-content: center;
 
   background: aliceblue;
-  width: 10rem;
-  height: 2rem;
+  width: 30rem;
+  height: 30rem;
   border: black solid 2px;
   padding: 2rem;
 }
