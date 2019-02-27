@@ -3404,7 +3404,7 @@ body:after {
 }
 
 .chat-header {
-  line-height: 100px;
+  line-height: 50px;
   color: darkblue;
   font-weight: bold;
   font-size: 3em;
@@ -3422,7 +3422,7 @@ body:after {
 
 .chat-msg {
   margin-bottom: 1rem;
-  line-height: 100px;
+  line-height: 10px;
   color: black;
   font-weight: normal;
   font-size: 1em;
