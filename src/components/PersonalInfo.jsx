@@ -8,9 +8,10 @@ const socket = io(config.serverUrl, { transports: ['websocket'] });
 const mapStateToProps = ({
   loginReducer: { loggedIn },
   userReducer: { user }
-}) => {
-  loggedIn, user;
-};
+}) => ({
+  loggedIn,
+  user
+});
 
 const connectedPersonalInfo = props => {
   const [chatMessages, setChatMessages] = useState([]);
