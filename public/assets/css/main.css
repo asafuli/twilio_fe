@@ -3377,7 +3377,8 @@ body:after {
 }
 
 .chat-login {
-  margin-left: 50%;
+  margin-left: 10rem;
+  margin-right: 10rem;
 }
 
 .chat-wrapper {
