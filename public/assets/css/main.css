@@ -3377,12 +3377,13 @@ body:after {
 }
 
 .chat-login {
-  margin-left: 4rem;
+  margin-left: 50%;
 }
 
 .chat-wrapper {
   display: flex;
   justify-content: center;
+  align-content: center;
 }
 
 /* .chat-uid .chat-form .chat-msg-list .chat-header {
