@@ -3382,8 +3382,8 @@ body:after {
 
 .chat-wrapper {
   display: flex;
-  justify-content: center;
-  align-content: center;
+  flex-flow: column;
+  align-items: center;
 }
 
 /* .chat-uid .chat-form .chat-msg-list .chat-header {
