@@ -28,13 +28,13 @@ const connectedPersonalInfo = props => {
     setCurrentMessage(e.target.value);
   };
 
-  return !props.loggedIn ? (
+  return false ? (
     <h1 className='chat-login'>Please login and start chatting!</h1>
   ) : (
     <div className='chat-wrapper'>
       <p className='chat-uid'>{props.uid}</p>
       <div className='chat-box'>
-        <h3 className='chat-header'>Chat messages!</h3>
+        <h3 className='chat-header'>!</h3>
         <ul className='chat-msg-list'>
           {chatMessages &&
             chatMessages.map((msg, idx) => (
