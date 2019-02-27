@@ -5,7 +5,12 @@ import io from 'socket.io-client';
 import config from '../config/config';
 
 const socket = io(config.serverUrl, { transports: ['websocket'] });
-const mapStateToProps = ({ loginReducer: loggedIn }) => loggedIn;
+const mapStateToProps = ({
+  loginReducer: { loggedIn },
+  userReducer: { user }
+}) => {
+  loggedIn, user;
+};
 
 const connectedPersonalInfo = props => {
   const [chatMessages, setChatMessages] = useState([]);
@@ -38,8 +43,9 @@ const connectedPersonalInfo = props => {
         <ul className='chat-msg-list'>
           {chatMessages &&
             chatMessages.map((msg, idx) => (
-              <li className='chat-msg' key={idx}>
-                {msg}
+              <li className='chat-msg-list-item' key={idx}>
+                <div className='chat-username'>{`${props.user}:`}</div>
+                <div className='chat-msg-text'>{msg}</div>}
               </li>
             ))}
         </ul>

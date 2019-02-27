@@ -3420,9 +3420,19 @@ body:after {
   margin: 0;
 }
 
-.chat-msg {
+.chat-msg-list-item {
   margin-bottom: 1rem;
   line-height: 10px;
+}
+
+.chat-username {
+  color: grey;
+  font-weight: normal;
+  font-size: 1em;
+  text-align: left;
+}
+
+.chat-msg-text {
   color: black;
   font-weight: normal;
   font-size: 1em;
@@ -3432,17 +3442,17 @@ body:after {
 .chat-form {
   display: flex;
   flex-flow: row wrap;
-  align-items: center;
-  justify-content: center;
+  align-items: left;
+  justify-content: left;
 }
 
 .chat-type-msg {
   background: skyblue;
-  width: 80%;
+  width: 50rem !important;
   height: 2rem;
   border: black solid 2px;
 
-  line-height: 100px;
+  line-height: 20px;
   color: black;
   font-weight: normal;
   font-size: 1em;
@@ -3454,7 +3464,7 @@ body:after {
   border: black solid 2px;
   padding: 5px;
   width: 10rem;
-  height: 2rem;
+  height: 1.5rem;
   margin: 10px;
 
   line-height: 100px;
