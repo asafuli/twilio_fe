@@ -29,11 +29,11 @@ const connectedPersonalInfo = props => {
   };
 
   return !props.loggedIn ? (
-    <h1>Please login and start chatting!</h1>
+    <h1 className='chat-login'>Please login and start chatting!</h1>
   ) : (
-    <div className='chat'>
-      <p>{props.uid}</p>
-      <form onSubmit={e => handleSubmit(e)}>
+    <div className='chat-wrapper'>
+      <p className='chat-uid'>{props.uid}</p>
+      <form className='chat-form' onSubmit={e => handleSubmit(e)}>
         <input
           type='text'
           value={currentMessage}
@@ -41,8 +41,8 @@ const connectedPersonalInfo = props => {
         />
         <input type='submit' value='Send' />
       </form>
-      <h3>Chat messages!</h3>
-      <ul>
+      <h3 className='chat-header'>Chat messages!</h3>
+      <ul className='chat-msg-list'>
         {chatMessages &&
           chatMessages.map((msg, idx) => <li key={idx}>{msg}</li>)}
       </ul>

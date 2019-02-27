@@ -3376,6 +3376,14 @@ body:after {
   margin: 0rem 0rem 0rem 3rem;
 }
 
-.chat {
-  background-color: #bbb;
+.chat-login {
+  margin-left: 4rem;
 }
+
+.chat-wrapper {
+  display: flex;
+  justify-content: center;
+}
+
+/* .chat-uid .chat-form .chat-msg-list .chat-header {
+} */
