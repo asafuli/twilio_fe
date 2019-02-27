@@ -3383,9 +3383,86 @@ body:after {
 
 .chat-wrapper {
   display: flex;
-  flex-flow: column;
+  flex-flow: column wrap;
   align-items: center;
 }
 
-/* .chat-uid .chat-form .chat-msg-list .chat-header {
+.chat-box {
+  display: flex;
+  flex-flow: column wrap;
+  align-items: center;
+  justify-content: center;
+
+  background: aliceblue;
+  width: 10rem;
+  height: 2rem;
+  border: black solid 2px;
+  padding: 2rem;
+}
+
+.chat-header {
+  line-height: 200px;
+  color: darkblue;
+  font-weight: bold;
+  font-size: 3em;
+  text-align: center;
+}
+
+.chat-msg-list {
+  display: flex;
+  flex-flow: column wrap;
+  align-items: center;
+}
+
+.chat-msg {
+  background: aliceblue;
+  width: 10rem;
+  height: 2rem;
+  margin: 2rem;
+
+  line-height: 100px;
+  color: black;
+  font-weight: normal;
+  font-size: 2em;
+  text-align: center;
+}
+
+.chat-form {
+  display: flex;
+  flex-flow: row wrap;
+  align-items: center;
+  justify-content: center;
+}
+
+.chat-type-msg {
+  background: aliceblue;
+  width: 10rem;
+  height: 2rem;
+  border: black solid 2px;
+
+  line-height: 100px;
+  color: black;
+  font-weight: bold;
+  font-size: 2em;
+  text-align: center;
+}
+
+.chat-submit-msg {
+  background: cyan;
+  border: black solid 2px;
+  padding: 5px;
+  width: 10rem;
+  height: 2rem;
+  margin: 10px;
+
+  line-height: 100px;
+  color: white;
+  font-weight: bold;
+  font-size: 2em;
+  text-align: center;
+}
+
+/* 
+chat-submit-msg */
+/*.chat-uid .chat-form .chat-msg-list .chat-header {
 } */

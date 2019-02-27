@@ -33,19 +33,26 @@ const connectedPersonalInfo = props => {
   ) : (
     <div className='chat-wrapper'>
       <p className='chat-uid'>{props.uid}</p>
+      <div className='chat-box'>
+        <h3 className='chat-header'>Chat messages!</h3>
+        <ul className='chat-msg-list'>
+          {chatMessages &&
+            chatMessages.map((msg, idx) => (
+              <li className='chat-msg' key={idx}>
+                {msg}
+              </li>
+            ))}
+        </ul>
+      </div>
       <form className='chat-form' onSubmit={e => handleSubmit(e)}>
         <input
+          className='chat-type-msg'
           type='text'
           value={currentMessage}
           onChange={e => handleChange(e)}
         />
-        <input type='submit' value='Send' />
+        <input classname='chat-submit-msg' type='submit' value='Send' />
       </form>
-      <h3 className='chat-header'>Chat messages!</h3>
-      <ul className='chat-msg-list'>
-        {chatMessages &&
-          chatMessages.map((msg, idx) => <li key={idx}>{msg}</li>)}
-      </ul>
     </div>
   );
 };
