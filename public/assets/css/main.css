@@ -3450,16 +3450,17 @@ body:after {
 }
 
 .chat-type-msg {
-  background: skyblue;
-  width: 50rem !important;
-  height: 2rem;
-  border: black solid 2px;
+  background: skyblue !important;
+  width: 70rem !important;
+  opacity: 0.3 !important;
+  height: 2rem !important;
+  border: black solid 2px !important;
 
-  line-height: 20px;
-  color: black;
-  font-weight: normal;
-  font-size: 1em;
-  text-align: left;
+  line-height: 20px !important;
+  color: black !important;
+  font-weight: normal !important;
+  font-size: 1em !important;
+  text-align: left !important;
 }
 
 .chat-submit-msg {
