@@ -19,5 +19,5 @@ export async function sendChatMsg(resource, user, message) {
   });
   const data = res.data;
   console.log('sendChatMsg: ', data);
-  return data;
+  return data.messages;
 }

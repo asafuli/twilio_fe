@@ -41,12 +41,14 @@ const connectedPersonalInfo = props => {
     });
   }, []);
 
-  const handleSubmit = e => {
+  const handleSubmit = async e => {
     e.preventDefault();
     socket.emit('chat message', currentMessage);
     setCurrentMessage('');
     // Sync DB
-    sendChatMsg(props.resource, props.user, currentMessage);
+    setChatMessages(
+      await sendChatMsg(props.resource, props.user, currentMessage)
+    );
   };
 
   const handleChange = e => {
