@@ -10,10 +10,11 @@ export async function getChatHistory(uid) {
   return data;
 }
 
-export async function sendChatMsg(resource, message) {
+export async function sendChatMsg(resource, user, message) {
   const res = await http.post(`${config.serverUrl}\\chat\\`, {
     timestamp: new Date(),
     resource,
+    user,
     message
   });
   const data = res.data;
