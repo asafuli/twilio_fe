@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom';
 import io from 'socket.io-client';
 import config from '../config/config';
-import { sendChatMsg } from '../services/chatService';
+import { sendChatMsg, getChatHistory } from '../services/chatService';
 
 const socket = io(config.serverUrl, { transports: ['websocket'] });
 const mapStateToProps = ({
@@ -19,7 +19,12 @@ const connectedPersonalInfo = props => {
   const [chatMessages, setChatMessages] = useState([]);
   const [currentMessage, setCurrentMessage] = useState('');
 
-  useEffect(() => {
+  useEffect(async () => {
+    if (chatMessages === []) {
+      const messagesDb = await getChatHistory(props.uid);
+      console.log('useEffect - Initial - Returned :', messagesDb);
+      setChatMessages(chatMessages);
+    }
     socket.on('chat message', msg => {
       setChatMessages([...chatMessages, msg]);
       console.log(chatMessages);
