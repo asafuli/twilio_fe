@@ -33,7 +33,7 @@ const connectedPersonalInfo = props => {
       setChatMessages([...chatMessages, msg]);
       console.log(chatMessages);
     });
-  });
+  }, []);
 
   const handleSubmit = e => {
     e.preventDefault();
