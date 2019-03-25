@@ -19,9 +19,13 @@ const connectedPersonalInfo = props => {
   const [chatMessages, setChatMessages] = useState([]);
   const [currentMessage, setCurrentMessage] = useState('');
 
-  useEffect(async () => {
+  async function fetchChatHistory() {
+    return await getChatHistory(props.uid);
+  }
+
+  useEffect(() => {
     if (chatMessages === []) {
-      const messagesDb = await getChatHistory(props.uid);
+      const messagesDb = fetchChatHistory();
       console.log('useEffect - Initial - Returned :', messagesDb);
       setChatMessages(chatMessages);
     }
