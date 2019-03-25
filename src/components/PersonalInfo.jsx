@@ -3,14 +3,16 @@ import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom';
 import io from 'socket.io-client';
 import config from '../config/config';
+import { sendChatMsg } from '../services/chatService';
 
 const socket = io(config.serverUrl, { transports: ['websocket'] });
 const mapStateToProps = ({
   loginReducer: { loggedIn },
-  userReducer: { user }
+  userReducer: { user, resource }
 }) => ({
   loggedIn,
-  user
+  user,
+  resource
 });
 
 const connectedPersonalInfo = props => {
@@ -28,6 +30,8 @@ const connectedPersonalInfo = props => {
     e.preventDefault();
     socket.emit('chat message', currentMessage);
     setCurrentMessage('');
+    // Sync DB
+    sendChatMsg(props.resource, currentMessage);
   };
 
   const handleChange = e => {
