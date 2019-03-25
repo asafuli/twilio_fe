@@ -2,7 +2,7 @@ import http from './httpService';
 import config from '../config/config';
 
 export async function getChatHistory(uid) {
-  const res = await http.get(`${config.serverUrl}\\chat\\${uid}`, {
+  const res = await http.get(`${config.serverUrl}\\chat\\user\\${uid}`, {
     preventCache: new Date()
   });
   const data = res.data;
