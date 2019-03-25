@@ -29,7 +29,7 @@ const connectedPersonalInfo = props => {
       fetchChatHistory()
         .then(messagesDb => {
           console.log('useEffect - Initial - Returned :', messagesDb);
-          setChatMessages(chatMessages);
+          setChatMessages(messagesDb);
         })
         .catch(err => {
           console.log('useEffect - Initial - rejected :', err);
@@ -46,7 +46,7 @@ const connectedPersonalInfo = props => {
     socket.emit('chat message', currentMessage);
     setCurrentMessage('');
     // Sync DB
-    sendChatMsg(props.resource, currentMessage);
+    sendChatMsg(props.resource, props.user, currentMessage);
   };
 
   const handleChange = e => {
@@ -64,8 +64,8 @@ const connectedPersonalInfo = props => {
           {chatMessages &&
             chatMessages.map((msg, idx) => (
               <li className='chat-msg-list-item' key={idx}>
-                <div className='chat-username'>{`${props.user}:`}</div>
-                <div className='chat-msg-text'>{msg}</div>
+                <div className='chat-username'>{msg.user}</div>
+                <div className='chat-msg-text'>{msg.message}</div>
               </li>
             ))}
         </ul>
