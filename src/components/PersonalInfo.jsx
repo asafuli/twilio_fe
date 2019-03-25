@@ -24,6 +24,7 @@ const connectedPersonalInfo = props => {
   }
 
   useEffect(() => {
+    console.log('useEffect - Initial - chatMessages :', chatMessages);
     if (chatMessages === []) {
       const messagesDb = fetchChatHistory();
       console.log('useEffect - Initial - Returned :', messagesDb);
