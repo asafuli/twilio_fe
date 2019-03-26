@@ -102,8 +102,7 @@ const connectedPersonalInfo = props => {
             state.messages.map((msg, idx) => (
               <li className='chat-msg-list-item' key={idx}>
                 <div className='chat-username'>
-                  {msg.user}:
-                  <span className='chat-msg-text'> {msg.message}</span>
+                  {msg.user}:<span className='chat-msg-text'> {msg}</span>
                 </div>
               </li>
             ))}
