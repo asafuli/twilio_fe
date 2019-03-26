@@ -30,11 +30,13 @@ const connectedPersonalInfo = props => {
         .then(messagesDb => {
           console.log('useEffect - Initial - Returned :', messagesDb);
           setChatMessages(messagesDb);
+          console.log('useEffect - Initial after setMessages :', chatMessages);
         })
         .catch(err => {
           console.log('useEffect - Initial - rejected :', err);
         });
     }
+
     socket.on('chat message', msg => {
       setChatMessages([...chatMessages, msg]);
       console.log('Use effect - Socket.on "chat message" : ', chatMessages);
