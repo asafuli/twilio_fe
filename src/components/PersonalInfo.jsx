@@ -89,6 +89,7 @@ const connectedPersonalInfo = props => {
   const handleChange = e => {
     setCurrentMessage(e.target.value);
   };
+  state.messages.map((msg, idx) => console.log(msg));
 
   return false ? (
     <h1 className='chat-login'>Please login and start chatting!</h1>
@@ -102,7 +103,8 @@ const connectedPersonalInfo = props => {
             state.messages.map((msg, idx) => (
               <li className='chat-msg-list-item' key={idx}>
                 <div className='chat-username'>
-                  {msg.user}:<span className='chat-msg-text'> {msg}</span>
+                  {msg.user}:
+                  <span className='chat-msg-text'> {msg.message}</span>
                 </div>
               </li>
             ))}
