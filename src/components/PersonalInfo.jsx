@@ -20,14 +20,8 @@ function messagesReducer(state = { messages: [] }, action) {
   const { messages } = state;
   const { payload } = action;
   if (action.type === 'updateChatMessagesDb') {
-    console.log(
-      'messageReducer - updateChatMessagesDb - State : ',
-      state,
-      action
-    );
     return { messages: payload };
   } else if (action.type === 'addNewChatMessage') {
-    console.log('messageReducer - addNewChatMessage - State : ', state, action);
     return { messages: [...messages, payload] };
   } else {
     throw new Error();
@@ -35,40 +29,30 @@ function messagesReducer(state = { messages: [] }, action) {
 }
 
 const connectedPersonalInfo = props => {
-  //const [chatMessages, setChatMessages] = useState([]);
   const [state, dispatch] = useReducer(messagesReducer, { messages: [] });
   const [currentMessage, setCurrentMessage] = useState('');
-  //const latestChatMessages = useRef(chatMessages);
   const { resource, user, loggedIn } = props;
 
   useEffect(() => {
     async function fetchChatHistory() {
       return await getChatHistory(props.uid);
     }
-    console.log('useEffect - chatMessages :', state.messages);
     if (state.messages.length === 0) {
       fetchChatHistory()
         .then(messagesDb => {
           console.log('useEffect - Initial - Returned :', messagesDb);
-          // setChatMessages(messagesDb);
           dispatch({ type: 'updateChatMessagesDb', payload: messagesDb });
-          console.log(
-            'useEffect - Initial after dispath updateChatMessagesDb :',
-            state.messages
-          );
         })
         .catch(err => {
           console.log('useEffect - Initial - rejected :', err);
         });
     }
 
-    socket.on('chat message', msg => {
-      //setChatMessages([...chatMessages, msg]);
-      dispatch({ type: 'addNewChatMessage', payload: { resource, user, msg } });
-      console.log(
-        'UseEffect - Socket.on - after dipatch addNewChatMessage : ',
-        state.messages
-      );
+    socket.on('chat message', message => {
+      dispatch({
+        type: 'addNewChatMessage',
+        payload: { resource, user, message }
+      });
     });
     return () => socket.disconnect();
   }, [props.uid]);
@@ -89,7 +73,6 @@ const connectedPersonalInfo = props => {
   const handleChange = e => {
     setCurrentMessage(e.target.value);
   };
-  state.messages.map((msg, idx) => console.log(msg));
 
   return false ? (
     <h1 className='chat-login'>Please login and start chatting!</h1>
