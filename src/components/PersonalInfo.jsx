@@ -48,7 +48,7 @@ const connectedPersonalInfo = props => {
         });
     }
 
-    socket.on('chat message', message => {
+    socket.on('chat message', ([resource, user, message]) => {
       dispatch({
         type: 'addNewChatMessage',
         payload: { resource, user, message }
@@ -59,7 +59,7 @@ const connectedPersonalInfo = props => {
 
   const handleSubmit = async e => {
     e.preventDefault();
-    socket.emit('chat message', currentMessage);
+    socket.emit('chat message', [resource, user, currentMessage]);
     setCurrentMessage('');
     // Sync DB
     try {
