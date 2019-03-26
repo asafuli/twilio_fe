@@ -1,11 +1,10 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useReducer } from 'react';
 import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom';
 import io from 'socket.io-client';
 import config from '../config/config';
 import { sendChatMsg, getChatHistory } from '../services/chatService';
 
-const socket = io(config.serverUrl, { transports: ['websocket'] });
 const mapStateToProps = ({
   loginReducer: { loggedIn },
   userReducer: { user, resource }
@@ -15,22 +14,40 @@ const mapStateToProps = ({
   resource
 });
 
-const connectedPersonalInfo = props => {
-  const [chatMessages, setChatMessages] = useState([]);
-  const [currentMessage, setCurrentMessage] = useState('');
+const socket = io(config.serverUrl, { transports: ['websocket'] });
 
-  async function fetchChatHistory() {
-    return await getChatHistory(props.uid);
+function messagesReducer(state = { messages: [] }, action) {
+  const { payload } = action;
+  if (action.type === 'updateChatMessagesDb') {
+    return { messages: payload };
+  } else if (action.type === 'addNewChatMessage') {
+    return { messages: [...state, payload] };
+  } else {
+    throw new Error();
   }
+}
+
+const connectedPersonalInfo = props => {
+  //const [chatMessages, setChatMessages] = useState([]);
+  const [state, dispatch] = useReducer(messagesReducer, { messages: [] });
+  const [currentMessage, setCurrentMessage] = useState('');
+  //const latestChatMessages = useRef(chatMessages);
 
   useEffect(() => {
+    async function fetchChatHistory() {
+      return await getChatHistory(props.uid);
+    }
     console.log('useEffect - chatMessages :', chatMessages);
-    if (chatMessages.length === 0) {
+    if (state.messages.length === 0) {
       fetchChatHistory()
         .then(messagesDb => {
           console.log('useEffect - Initial - Returned :', messagesDb);
-          setChatMessages(messagesDb);
-          console.log('useEffect - Initial after setMessages :', chatMessages);
+          // setChatMessages(messagesDb);
+          dispatch({ type: 'updateChatMessagesDb', payload: messagesDb });
+          console.log(
+            'useEffect - Initial after dispath updateChatMessagesDb :',
+            state.messages
+          );
         })
         .catch(err => {
           console.log('useEffect - Initial - rejected :', err);
@@ -38,19 +55,27 @@ const connectedPersonalInfo = props => {
     }
 
     socket.on('chat message', msg => {
-      setChatMessages([...chatMessages, msg]);
-      console.log('Use effect - Socket.on "chat message" : ', chatMessages);
+      //setChatMessages([...chatMessages, msg]);
+      dispatch({ type: 'addNewChatMessage', payload: msg });
+      console.log(
+        'UseEffect - Socket.on - after dipatch addNewChatMessage : ',
+        state.messages
+      );
     });
-  }, []);
+    return () => socket.disconnect();
+  }, [props.uid]);
 
   const handleSubmit = async e => {
     e.preventDefault();
     socket.emit('chat message', currentMessage);
     setCurrentMessage('');
     // Sync DB
-    setChatMessages(
-      await sendChatMsg(props.resource, props.user, currentMessage)
-    );
+    try {
+      await sendChatMsg(props.resource, props.user, currentMessage);
+    } catch (e) {
+      dispatch({ type: 'updateChatMessagesDb', payload: state.messages });
+      throw new Error('Failed to sendChatMsg to DB - reverting UI based on DB');
+    }
   };
 
   const handleChange = e => {
@@ -65,8 +90,8 @@ const connectedPersonalInfo = props => {
       <div className='chat-box'>
         <h3 className='chat-header'>Lets chat!</h3>
         <ul className='chat-msg-list'>
-          {chatMessages &&
-            chatMessages.map((msg, idx) => (
+          {state.messages.length > 0 &&
+            state.messages.map((msg, idx) => (
               <li className='chat-msg-list-item' key={idx}>
                 <div className='chat-username'>
                   {msg.user}:
