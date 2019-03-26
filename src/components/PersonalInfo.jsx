@@ -37,7 +37,7 @@ const connectedPersonalInfo = props => {
     }
     socket.on('chat message', msg => {
       setChatMessages([...chatMessages, msg]);
-      console.log(chatMessages);
+      console.log('Use effect - Socket.on "chat message" : ', chatMessages);
     });
   }, []);
 
