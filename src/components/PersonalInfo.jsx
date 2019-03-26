@@ -20,8 +20,14 @@ function messagesReducer(state = { messages: [] }, action) {
   const { messages } = state;
   const { payload } = action;
   if (action.type === 'updateChatMessagesDb') {
+    console.log(
+      'messageReducer - updateChatMessagesDb - State : ',
+      state,
+      action
+    );
     return { messages: payload };
   } else if (action.type === 'addNewChatMessage') {
+    console.log('messageReducer - addNewChatMessage - State : ', state, action);
     return { messages: [...messages, payload] };
   } else {
     throw new Error();
