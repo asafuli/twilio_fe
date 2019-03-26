@@ -17,11 +17,12 @@ const mapStateToProps = ({
 const socket = io(config.serverUrl, { transports: ['websocket'] });
 
 function messagesReducer(state = { messages: [] }, action) {
+  const { messages } = state;
   const { payload } = action;
   if (action.type === 'updateChatMessagesDb') {
     return { messages: payload };
   } else if (action.type === 'addNewChatMessage') {
-    return { messages: [...state, payload] };
+    return { messages: [...messages, payload] };
   } else {
     throw new Error();
   }
