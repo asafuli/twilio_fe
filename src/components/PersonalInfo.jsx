@@ -37,7 +37,7 @@ const connectedPersonalInfo = props => {
     async function fetchChatHistory() {
       return await getChatHistory(props.uid);
     }
-    console.log('useEffect - chatMessages :', chatMessages);
+    console.log('useEffect - chatMessages :', state.messages);
     if (state.messages.length === 0) {
       fetchChatHistory()
         .then(messagesDb => {
