@@ -39,6 +39,7 @@ const connectedPersonalInfo = props => {
   const [state, dispatch] = useReducer(messagesReducer, { messages: [] });
   const [currentMessage, setCurrentMessage] = useState('');
   //const latestChatMessages = useRef(chatMessages);
+  const { resource, user, loggedIn } = props;
 
   useEffect(() => {
     async function fetchChatHistory() {
@@ -63,7 +64,7 @@ const connectedPersonalInfo = props => {
 
     socket.on('chat message', msg => {
       //setChatMessages([...chatMessages, msg]);
-      dispatch({ type: 'addNewChatMessage', payload: msg });
+      dispatch({ type: 'addNewChatMessage', payload: { resource, user, msg } });
       console.log(
         'UseEffect - Socket.on - after dipatch addNewChatMessage : ',
         state.messages
