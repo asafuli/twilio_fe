@@ -60,7 +60,7 @@ const connectedPersonalInfo = props => {
 
   const handleSubmit = async e => {
     e.preventDefault();
-    console.log('b4 socket.emit message: ', resource, user, message);
+    console.log('b4 socket.emit message: ', resource, user, currentMessage);
     socket.emit('chat message', [resource, user, currentMessage]);
     setCurrentMessage('');
     // Sync DB
