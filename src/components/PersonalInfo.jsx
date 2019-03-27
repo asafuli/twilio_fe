@@ -74,6 +74,8 @@ const connectedPersonalInfo = props => {
     setCurrentMessage(e.target.value);
   };
 
+  state.messages.map(msg => console.log(msg));
+
   return false ? (
     <h1 className='chat-login'>Please login and start chatting!</h1>
   ) : (
