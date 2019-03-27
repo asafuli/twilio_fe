@@ -49,6 +49,7 @@ const connectedPersonalInfo = props => {
     }
 
     socket.on('chat message', ([resource, user, message]) => {
+      console.log('dispatching new message: ', resource, user, message);
       dispatch({
         type: 'addNewChatMessage',
         payload: { resource, user, message }
