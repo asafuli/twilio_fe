@@ -55,11 +55,12 @@ const connectedPersonalInfo = props => {
         payload: { resource, user, message }
       });
     });
-    return () => socket.disconnect();
+    // return () => socket.disconnect();
   }, [props.uid]);
 
   const handleSubmit = async e => {
     e.preventDefault();
+    console.log('b4 socket.emit message: ', resource, user, message);
     socket.emit('chat message', [resource, user, currentMessage]);
     setCurrentMessage('');
     // Sync DB
