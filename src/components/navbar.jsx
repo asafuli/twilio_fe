@@ -30,11 +30,6 @@ const ConnectedNavBar = props => {
     setNavExpanded(false);
   };
 
-  const closeNav = () => {
-    console.log('Onselect --> close nav');
-    setNavExpanded(false);
-  };
-
   return (
     <Navbar
       expand='lg'
@@ -52,25 +47,13 @@ const ConnectedNavBar = props => {
           onSelect={() => closeNav()}
           onClick={() => closeClickNav()}
         >
-          <Nav.Link
-            as={NavLink}
-            onSelect={() => closeNav()}
-            onClick={() => closeClickNav()}
-            className='nav-link'
-            to='/flight'
-          >
+          <Nav.Link as={NavLink} className='nav-link' to='/flight'>
             Flight
           </Nav.Link>
-          <Nav.Item
-            as={NavLink}
-            onSelect={() => closeNav()}
-            onClick={() => closeClickNav()}
-            className='nav-item'
-            to='/map'
-          >
+          <Nav.Item as={NavLink} className='nav-item' to='/map'>
             map
           </Nav.Item>
-          {/* <Nav.Link href='#features'>
+          <Nav.Link href='#features'>
             <NavLink className='nav-link' to='/accomodation'>
               Accomodation
             </NavLink>
@@ -118,8 +101,8 @@ const ConnectedNavBar = props => {
               <NavLink className='nav-link' to='/Logout'>
                 Logout
               </NavLink>
-            </Nav.Link> */}
-        </Nav>
+            </Nav.Link>
+          </Nav>
         )}
       </Navbar.Collapse>
     </Navbar>
