@@ -30,7 +30,6 @@ const ConnectedNavBar = props => {
     setNavExpanded(false);
   };
 
-
   const closeNav = () => {
     console.log('Onselect --> close nav');
     setNavExpanded(false);
@@ -48,10 +47,14 @@ const ConnectedNavBar = props => {
       <Navbar.Brand href='#home'>The Black Forest X</Navbar.Brand>
       <Navbar.Toggle aria-controls='responsive-navbar-nav' />
       <Navbar.Collapse id='responsive-navbar-nav'>
-        <Nav className='mr-auto' onSelect={() => closeNav()} onclick={() => closeClickNav()}>
+        <Nav
+          className='mr-auto'
+          onSelect={() => closeNav()}
+          onclick={() => closeClickNav()}
+        >
           <Nav.Link
             as={NavLink}
-            onSelect={) => closeNav()}
+            onSelect={() => closeNav()}
             onclick={() => closeClickNav()}
             className='nav-link'
             to='/flight'
@@ -60,7 +63,7 @@ const ConnectedNavBar = props => {
           </Nav.Link>
           <Nav.Item
             as={NavLink}
-            onSelect={) => closeNav()}
+            onSelect={() => closeNav()}
             onclick={() => closeClickNav()}
             className='nav-item'
             to='/map'
