@@ -29,29 +29,29 @@ const ConnectedNavBar = props => {
       <Navbar.Toggle aria-controls='responsive-navbar-nav' />
       <Navbar.Collapse id='responsive-navbar-nav'>
         <Nav className='mr-auto '>
-          <Nav.Link>
+          <Nav.Link href='#features'>
             <NavLink className='nav-link' to='/flight'>
               Flight
             </NavLink>
           </Nav.Link>
-          <Nav.Link>
+          <Nav.Link href='#features'>
             <NavLink className='nav-link' to='/accomodation'>
               Accomodation
             </NavLink>
           </Nav.Link>
-          <Nav.Link>
+          <Nav.Link href='#features'>
             <div>
               <NavLink className='nav-link' to='/map'>
                 Map
               </NavLink>
             </div>
           </Nav.Link>
-          <Nav.Link>
+          <Nav.Link href='#features'>
             <NavLink className='nav-link' to='/home'>
               My Page
             </NavLink>
           </Nav.Link>
-          <Nav.Link>
+          <Nav.Link href='#features'>
             <NavLink className='nav-link' to='/chat'>
               Chat
             </NavLink>
@@ -59,12 +59,12 @@ const ConnectedNavBar = props => {
         </Nav>
         {!props.loggedIn && (
           <Nav>
-            <Nav.Link>
+            <Nav.Link href='#deets'>
               <NavLink className='nav-link' to='/login'>
                 Login
               </NavLink>
             </Nav.Link>
-            <Nav.Link>
+            <Nav.Link href='#deets'>
               <NavLink className='nav-link' to='/home'>
                 Register
               </NavLink>
@@ -73,12 +73,12 @@ const ConnectedNavBar = props => {
         )}
         {props.loggedIn && (
           <Nav>
-            <Nav.Link>
+            <Nav.Link href='#deets'>
               <navLink className='nav-link active' to='/home'>
                 {props.user}
               </navLink>
             </Nav.Link>
-            <Nav.Link>
+            <Nav.Link href='#deets'>
               <NavLink className='nav-link' to='/Logout'>
                 Logout
               </NavLink>
