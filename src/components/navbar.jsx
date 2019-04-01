@@ -29,7 +29,7 @@ const ConnectedNavBar = props => {
       <Navbar.Toggle aria-controls='responsive-navbar-nav' />
       <Navbar.Collapse id='responsive-navbar-nav'>
         <Nav className='mr-auto '>
-          <Nav.Link href='#features'>
+          {/* <Nav.Link href='#features'>
             <NavLink className='nav-link' to='/flight'>
               Flight
             </NavLink>
@@ -53,11 +53,11 @@ const ConnectedNavBar = props => {
             <NavLink className='nav-link' to='/chat'>
               Chat
             </NavLink>
-          </Nav.Link>
+          </Nav.Link> */}
         </Nav>
         {!props.loggedIn && (
           <Nav>
-            <Nav.Link href='#deets'>
+            {/* <Nav.Link href='#deets'>
               <NavLink className='nav-link' to='/login'>
                 Login
               </NavLink>
@@ -66,12 +66,12 @@ const ConnectedNavBar = props => {
               <NavLink className='nav-link' to='/home'>
                 Register
               </NavLink>
-            </Nav.Link>
+            </Nav.Link> */}
           </Nav>
         )}
         {props.loggedIn && (
           <Nav>
-            <Nav.Link href='#deets'>
+            {/* <Nav.Link href='#deets'>
               <navLink className='nav-link active' to='/home'>
                 {props.user}
               </navLink>
@@ -80,7 +80,7 @@ const ConnectedNavBar = props => {
               <NavLink className='nav-link' to='/Logout'>
                 Logout
               </NavLink>
-            </Nav.Link>
+            </Nav.Link> */}
           </Nav>
         )}
       </Navbar.Collapse>
