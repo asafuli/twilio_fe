@@ -18,23 +18,24 @@ const MapStateToProps = ({
 
 const ConnectedNavBar = props => {
   return (
-    <Navbar
-      collapseOnSelect
-      expand='lg'
-      bg='dark'
-      variant='dark'
-      className={props.navBarClass}
-    >
-      <Navbar.Brand href='#home'>The Black Forest X</Navbar.Brand>
-      <Navbar.Toggle aria-controls='responsive-navbar-nav' />
-      <Navbar.Collapse id='responsive-navbar-nav'>
-        <Nav className='mr-auto '>
-          <Nav.Link href='#features'>
-            <NavLink className='nav-link' to='/flight'>
-              Flight
-            </NavLink>
-          </Nav.Link>
-          {/*<Nav.Link href='#features'>
+    <div>
+      <Navbar
+        collapseOnSelect
+        expand='lg'
+        bg='dark'
+        variant='dark'
+        className={props.navBarClass}
+      >
+        <Navbar.Brand href='#home'>The Black Forest X</Navbar.Brand>
+        <Navbar.Toggle aria-controls='responsive-navbar-nav' />
+        <Navbar.Collapse id='responsive-navbar-nav'>
+          <Nav className='mr-auto '>
+            <Nav.Link>
+              <NavLink className='nav-link' to='/flight'>
+                Flight
+              </NavLink>
+            </Nav.Link>
+            {/*<Nav.Link href='#features'>
             <NavLink className='nav-link' to='/accomodation'>
               Accomodation
             </NavLink>
@@ -54,10 +55,10 @@ const ConnectedNavBar = props => {
               Chat
             </NavLink>
           </Nav.Link> */}
-        </Nav>
-        {!props.loggedIn && (
-          <Nav>
-            {/* <Nav.Link href='#deets'>
+          </Nav>
+          {!props.loggedIn && (
+            <Nav>
+              {/* <Nav.Link href='#deets'>
               <NavLink className='nav-link' to='/login'>
                 Login
               </NavLink>
@@ -67,11 +68,11 @@ const ConnectedNavBar = props => {
                 Register
               </NavLink>
             </Nav.Link> */}
-          </Nav>
-        )}
-        {props.loggedIn && (
-          <Nav>
-            {/* <Nav.Link href='#deets'>
+            </Nav>
+          )}
+          {props.loggedIn && (
+            <Nav>
+              {/* <Nav.Link href='#deets'>
               <navLink className='nav-link active' to='/home'>
                 {props.user}
               </navLink>
@@ -81,10 +82,11 @@ const ConnectedNavBar = props => {
                 Logout
               </NavLink>
             </Nav.Link> */}
-          </Nav>
-        )}
-      </Navbar.Collapse>
-    </Navbar>
+            </Nav>
+          )}
+        </Navbar.Collapse>
+      </Navbar>
+    </div>
   );
 };
 
