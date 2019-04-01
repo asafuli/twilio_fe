@@ -29,10 +29,20 @@ const ConnectedNavBar = props => {
       <Navbar.Toggle aria-controls='responsive-navbar-nav' />
       <Navbar.Collapse id='responsive-navbar-nav'>
         <Nav className='mr-auto '>
-          <Nav.Link as={NavLink} className='nav-link' to='/flight'>
+          <Nav.Link
+            as={NavLink}
+            collapseOnSelect
+            className='nav-link'
+            to='/flight'
+          >
             Flight
           </Nav.Link>
-          <Nav.Item as={NavLink} className='nav-item' to='/map'>
+          <Nav.Item
+            as={NavLink}
+            collapseOnSelect
+            className='nav-item'
+            to='/map'
+          >
             map
           </Nav.Item>
           {/* <Nav.Link href='#features'>
