@@ -38,8 +38,8 @@ const ConnectedNavBar = props => {
       className={`${props.navBarClass} fixed-top`}
     >
       <Navbar.Brand href='#home'>The Black Forest X</Navbar.Brand>
-      <Navbar.Toggle aria-controls='responsive-navbar-nav' />
-      <Navbar.Collapse id='responsive-navbar-nav'>
+      <Navbar.Toggle />
+      <Navbar.Collapse>
         <Nav className='mr-auto' onSelect={closeNav}>
           <Nav.Link
             as={NavLink}
