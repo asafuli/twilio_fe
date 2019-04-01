@@ -50,12 +50,12 @@ const ConnectedNavBar = props => {
         <Nav
           className='mr-auto'
           onSelect={() => closeNav()}
-          onclick={() => closeClickNav()}
+          onClick={() => closeClickNav()}
         >
           <Nav.Link
             as={NavLink}
             onSelect={() => closeNav()}
-            onclick={() => closeClickNav()}
+            onClick={() => closeClickNav()}
             className='nav-link'
             to='/flight'
           >
@@ -64,7 +64,7 @@ const ConnectedNavBar = props => {
           <Nav.Item
             as={NavLink}
             onSelect={() => closeNav()}
-            onclick={() => closeClickNav()}
+            onClick={() => closeClickNav()}
             className='nav-item'
             to='/map'
           >
