@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { NavLink, withRouter } from 'react-router-dom';
 import { Navbar, Nav } from 'react-bootstrap';
 import { connect } from 'react-redux';
@@ -17,32 +17,32 @@ const MapStateToProps = ({
 };
 
 const ConnectedNavBar = props => {
+  const [isNavExpanded, setNavExpanded] = useState(false);
+
+  const toggleNavExpanded = expanded => {
+    setNavExpanded(!expanded);
+  };
+  const closeNav = () => {
+    setNavExpanded(false);
+  };
+
   return (
     <Navbar
-      collapseOnSelect
       expand='lg'
       bg='dark'
       variant='dark'
+      onToggle={() => toggleNavExpanded(isNavExpanded)}
+      expanded={isNavExpanded}
       className={`${props.navBarClass} fixed-top`}
     >
       <Navbar.Brand href='#home'>The Black Forest X</Navbar.Brand>
       <Navbar.Toggle aria-controls='responsive-navbar-nav' />
       <Navbar.Collapse id='responsive-navbar-nav'>
-        <Nav className='mr-auto '>
-          <Nav.Link
-            as={NavLink}
-            collapseOnSelect
-            className='nav-link'
-            to='/flight'
-          >
+        <Nav className='mr-auto' onSelect={closeNav}>
+          <Nav.Link as={NavLink} className='nav-link' to='/flight'>
             Flight
           </Nav.Link>
-          <Nav.Item
-            as={NavLink}
-            collapseOnSelect
-            className='nav-item'
-            to='/map'
-          >
+          <Nav.Item as={NavLink} className='nav-item' to='/map'>
             map
           </Nav.Item>
           {/* <Nav.Link href='#features'>
