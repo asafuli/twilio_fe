@@ -18,19 +18,73 @@ const MapStateToProps = ({
 
 const ConnectedNavBar = props => {
   return (
-    <div>
-      <Navbar bg='light' expand='lg'>
-        <Navbar.Brand href='#home'>React-Bootstrap</Navbar.Brand>
-        <Navbar.Toggle aria-controls='basic-navbar-nav' />
-        <Navbar.Collapse id='basic-navbar-nav'>
-          <Nav className='mr-auto'>
-            <Nav.Link href='#home'>Home</Nav.Link>
-            <Nav.Link href='#link'>Link</Nav.Link>
+    <Navbar
+      collapseOnSelect
+      expand='lg'
+      bg='dark'
+      variant='dark'
+      className={props.navBarClass}
+    >
+      <Navbar.Brand href='#home'>The Black Forest X</Navbar.Brand>
+      <Navbar.Toggle aria-controls='responsive-navbar-nav' />
+      <Navbar.Collapse id='responsive-navbar-nav'>
+        <Nav className='mr-auto '>
+          <Nav.Link href='#features'>
+            <NavLink className='nav-link' to='/flight'>
+              Flight
+            </NavLink>
+          </Nav.Link>
+          <Nav.Link href='#features'>
+            <NavLink className='nav-link' to='/accomodation'>
+              Accomodation
+            </NavLink>
+          </Nav.Link>
+          <Nav.Link href='#features'>
+            <NavLink className='nav-link' to='/map'>
+              Map
+            </NavLink>
+          </Nav.Link>
+          <Nav.Link href='#features'>
+            <NavLink className='nav-link' to='/home'>
+              My Page
+            </NavLink>
+          </Nav.Link>
+          <Nav.Link href='#features'>
+            <NavLink className='nav-link' to='/chat'>
+              Chat
+            </NavLink>
+          </Nav.Link>
+        </Nav>
+        {!props.loggedIn && (
+          <Nav>
+            <Nav.Link href='#deets'>
+              <NavLink className='nav-link' to='/login'>
+                Login
+              </NavLink>
+            </Nav.Link>
+            <Nav.Link href='#deets'>
+              <NavLink className='nav-link' to='/home'>
+                Register
+              </NavLink>
+            </Nav.Link>
           </Nav>
-        </Navbar.Collapse>
-      </Navbar>
-      ;
-    </div>
+        )}
+        {props.loggedIn && (
+          <Nav>
+            <Nav.Link href='#deets'>
+              <navLink className='nav-link active' to='/home'>
+                {props.user}
+              </navLink>
+            </Nav.Link>
+            <Nav.Link href='#deets'>
+              <NavLink className='nav-link' to='/Logout'>
+                Logout
+              </NavLink>
+            </Nav.Link>
+          </Nav>
+        )}
+      </Navbar.Collapse>
+    </Navbar>
   );
 };
 
