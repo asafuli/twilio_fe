@@ -20,9 +20,11 @@ const ConnectedNavBar = props => {
   const [isNavExpanded, setNavExpanded] = useState(false);
 
   const toggleNavExpanded = expanded => {
+    console.log('Ontoggle --> toggleNavExpanded');
     setNavExpanded(!expanded);
   };
   const closeNav = () => {
+    console.log('Onselect --> close nav');
     setNavExpanded(false);
   };
 
@@ -39,10 +41,20 @@ const ConnectedNavBar = props => {
       <Navbar.Toggle aria-controls='responsive-navbar-nav' />
       <Navbar.Collapse id='responsive-navbar-nav'>
         <Nav className='mr-auto' onSelect={closeNav}>
-          <Nav.Link as={NavLink} className='nav-link' to='/flight'>
+          <Nav.Link
+            as={NavLink}
+            onSelect={closeNav}
+            className='nav-link'
+            to='/flight'
+          >
             Flight
           </Nav.Link>
-          <Nav.Item as={NavLink} className='nav-item' to='/map'>
+          <Nav.Item
+            as={NavLink}
+            onSelect={closeNav}
+            className='nav-item'
+            to='/map'
+          >
             map
           </Nav.Item>
           {/* <Nav.Link href='#features'>
