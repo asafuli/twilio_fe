@@ -3362,12 +3362,11 @@ body:after {
   transform: translateY(-100%);
 }
 
-/* .navbar-collapse {
+.navbar-collapse {
   display: flex;
   justify-content: space-between;
-} */
-
-.timer-title {
+}
+*/ .timer-title {
   font: initial;
   font-size: 2rem;
 }
