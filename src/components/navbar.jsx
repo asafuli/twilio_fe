@@ -20,13 +20,10 @@ const ConnectedNavBar = props => {
   const [isNavExpanded, setNavExpanded] = useState(false);
 
   const toggleNavExpanded = expanded => {
-    console.log('Ontoggle --> toggleNavExpanded');
     setNavExpanded(!expanded);
-    console.log('Ontoggle --> expanded = ', expanded);
   };
 
   const closeClickNav = () => {
-    console.log('onClick --> closeClickNav ');
     setNavExpanded(false);
   };
 
