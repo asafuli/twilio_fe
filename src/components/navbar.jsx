@@ -24,7 +24,7 @@ const ConnectedNavBar = props => {
         expand='lg'
         bg='dark'
         variant='dark'
-        className={props.navBarClass}
+        // className={props.navBarClass}
       >
         <Navbar.Brand href='#home'>The Black Forest X</Navbar.Brand>
         <Navbar.Toggle aria-controls='responsive-navbar-nav' />

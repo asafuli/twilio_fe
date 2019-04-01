@@ -3352,7 +3352,7 @@ body:after {
   }
 }
 
-.fixed-top {
+/* .fixed-top {
   transition: transform 0.3s ease-in-out;
   will-change: transform;
   transform: translateY(0);
@@ -3360,12 +3360,12 @@ body:after {
 
 .navbar-hidden {
   transform: translateY(-100%);
-}
+} */
 
-.navbar-collapse {
+/* .navbar-collapse {
   display: flex;
   justify-content: space-between;
-}
+} */
 
 .timer-title {
   font: initial;
