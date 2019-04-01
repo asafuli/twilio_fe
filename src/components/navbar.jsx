@@ -29,60 +29,60 @@ const ConnectedNavBar = props => {
       <Navbar.Toggle aria-controls='responsive-navbar-nav' />
       <Navbar.Collapse id='responsive-navbar-nav'>
         <Nav className='mr-auto '>
-          <Nav.Item>
+          <Nav.Link>
             <NavLink className='nav-link' to='/flight'>
               Flight
             </NavLink>
-          </Nav.Item>
-          <Nav.Item>
+          </Nav.Link>
+          <Nav.Link>
             <NavLink className='nav-link' to='/accomodation'>
               Accomodation
             </NavLink>
-          </Nav.Item>
-          <Nav.Item>
+          </Nav.Link>
+          <Nav.Link>
             <div>
               <NavLink className='nav-link' to='/map'>
                 Map
               </NavLink>
             </div>
-          </Nav.Item>
-          <Nav.Item>
+          </Nav.Link>
+          <Nav.Link>
             <NavLink className='nav-link' to='/home'>
               My Page
             </NavLink>
-          </Nav.Item>
-          <Nav.Item>
+          </Nav.Link>
+          <Nav.Link>
             <NavLink className='nav-link' to='/chat'>
               Chat
             </NavLink>
-          </Nav.Item>
+          </Nav.Link>
         </Nav>
         {!props.loggedIn && (
           <Nav>
-            <Nav.Item>
+            <Nav.Link>
               <NavLink className='nav-link' to='/login'>
                 Login
               </NavLink>
-            </Nav.Item>
-            <Nav.Item>
+            </Nav.Link>
+            <Nav.Link>
               <NavLink className='nav-link' to='/home'>
                 Register
               </NavLink>
-            </Nav.Item>
+            </Nav.Link>
           </Nav>
         )}
         {props.loggedIn && (
           <Nav>
-            <Nav.Item>
+            <Nav.Link>
               <navLink className='nav-link active' to='/home'>
                 {props.user}
               </navLink>
-            </Nav.Item>
-            <Nav.Item>
+            </Nav.Link>
+            <Nav.Link>
               <NavLink className='nav-link' to='/Logout'>
                 Logout
               </NavLink>
-            </Nav.Item>
+            </Nav.Link>
           </Nav>
         )}
       </Navbar.Collapse>
