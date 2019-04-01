@@ -22,7 +22,15 @@ const ConnectedNavBar = props => {
   const toggleNavExpanded = expanded => {
     console.log('Ontoggle --> toggleNavExpanded');
     setNavExpanded(!expanded);
+    console.log('Ontoggle --> expanded = ', expanded);
   };
+
+  const closeClickNav = () => {
+    console.log('onClick --> closeClickNav ');
+    setNavExpanded(false);
+  };
+
+
   const closeNav = () => {
     console.log('Onselect --> close nav');
     setNavExpanded(false);
@@ -38,12 +46,13 @@ const ConnectedNavBar = props => {
       className={`${props.navBarClass} fixed-top`}
     >
       <Navbar.Brand href='#home'>The Black Forest X</Navbar.Brand>
-      <Navbar.Toggle />
-      <Navbar.Collapse>
-        <Nav className='mr-auto' onSelect={closeNav}>
+      <Navbar.Toggle aria-controls='responsive-navbar-nav' />
+      <Navbar.Collapse id='responsive-navbar-nav'>
+        <Nav className='mr-auto' onSelect={() => closeNav()} onclick={() => closeClickNav()}>
           <Nav.Link
             as={NavLink}
-            onSelect={closeNav}
+            onSelect={) => closeNav()}
+            onclick={() => closeClickNav()}
             className='nav-link'
             to='/flight'
           >
@@ -51,7 +60,8 @@ const ConnectedNavBar = props => {
           </Nav.Link>
           <Nav.Item
             as={NavLink}
-            onSelect={closeNav}
+            onSelect={) => closeNav()}
+            onclick={() => closeClickNav()}
             className='nav-item'
             to='/map'
           >
