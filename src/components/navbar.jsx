@@ -29,47 +29,64 @@ const ConnectedNavBar = props => {
       <Navbar.Toggle aria-controls='responsive-navbar-nav' />
       <Navbar.Collapse id='responsive-navbar-nav'>
         <Nav className='mr-auto '>
-          <NavLink className='nav-link' to='/flight'>
-            Flight
-          </NavLink>
-
-          <NavLink className='nav-link' to='/accomodation'>
-            Accomodation
-          </NavLink>
-
-          <NavLink className='nav-link' to='/map'>
-            Map
-          </NavLink>
-
-          <NavLink className='nav-link' to='/home'>
-            My Page
-          </NavLink>
-
-          <NavLink className='nav-link' to='/chat'>
-            Chat
-          </NavLink>
+          <Nav.Link href='#features'>
+            <div>
+              <NavLink className='nav-link' to='/flight'>
+                Flight
+              </NavLink>
+            </div>
+          </Nav.Link>
+        </Nav>
+        {/* <Nav.Link href='#features'>
+            <NavLink className='nav-link' to='/accomodation'>
+              Accomodation
+            </NavLink>
+          </Nav.Link>
+          <Nav.Link href='#features'>
+            <div>
+              <NavLink className='nav-link' to='/map'>
+                Map
+              </NavLink>
+            </div>
+          </Nav.Link>
+          <Nav.Link href='#features'>
+            <NavLink className='nav-link' to='/home'>
+              My Page
+            </NavLink>
+          </Nav.Link>
+          <Nav.Link href='#features'>
+            <NavLink className='nav-link' to='/chat'>
+              Chat
+            </NavLink>
+          </Nav.Link>
         </Nav>
         {!props.loggedIn && (
           <Nav>
-            <NavLink className='nav-link' to='/login'>
-              Login
-            </NavLink>
-
-            <NavLink className='nav-link' to='/home'>
-              Register
-            </NavLink>
+            <Nav.Link href='#deets'>
+              <NavLink className='nav-link' to='/login'>
+                Login
+              </NavLink>
+            </Nav.Link>
+            <Nav.Link href='#deets'>
+              <NavLink className='nav-link' to='/home'>
+                Register
+              </NavLink>
+            </Nav.Link>
           </Nav>
         )}
         {props.loggedIn && (
           <Nav>
-            <navLink className='nav-link active' to='/home'>
-              {props.user}
-            </navLink>
-
-            <NavLink className='nav-link' to='/Logout'>
-              Logout
-            </NavLink>
-          </Nav>
+            <Nav.Link href='#deets'>
+              <navLink className='nav-link active' to='/home'>
+                {props.user}
+              </navLink>
+            </Nav.Link>
+            <Nav.Link href='#deets'>
+              <NavLink className='nav-link' to='/Logout'>
+                Logout
+              </NavLink>
+            </Nav.Link>
+          </Nav> */}
         )}
       </Navbar.Collapse>
     </Navbar>
