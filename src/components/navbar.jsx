@@ -39,7 +39,7 @@ const ConnectedNavBar = props => {
       <Navbar.Brand href='#home'>The Black Forest X</Navbar.Brand>
       <Navbar.Toggle aria-controls='responsive-navbar-nav' />
       <Navbar.Collapse className='.navbar-collapse' id='responsive-navbar-nav'>
-        <Nav className='mr-auto' onClick={() => closeClickNav()}>
+        <Nav onClick={() => closeClickNav()}>
           <Nav.Link as={NavLink} className='nav-link' to='/flight'>
             Flight
           </Nav.Link>
@@ -57,7 +57,7 @@ const ConnectedNavBar = props => {
           </Nav.Link>
         </Nav>
         {!props.loggedIn && (
-          <Nav className='mr-auto' onClick={() => closeClickNav()}>
+          <Nav onClick={() => closeClickNav()}>
             <Nav.Link as={NavLink} className='nav-link' to='/login'>
               Login
             </Nav.Link>
@@ -67,7 +67,7 @@ const ConnectedNavBar = props => {
           </Nav>
         )}
         {props.loggedIn && (
-          <Nav className='mr-auto ' onClick={() => closeClickNav()}>
+          <Nav onClick={() => closeClickNav()}>
             <Nav.Link as={NavLink} className='nav-link active' to='/home'>
               {props.user}
             </Nav.Link>
