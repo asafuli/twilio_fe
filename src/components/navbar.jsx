@@ -42,11 +42,7 @@ const ConnectedNavBar = props => {
       <Navbar.Brand href='#home'>The Black Forest X</Navbar.Brand>
       <Navbar.Toggle aria-controls='responsive-navbar-nav' />
       <Navbar.Collapse id='responsive-navbar-nav'>
-        <Nav
-          className='mr-auto'
-          onSelect={() => closeNav()}
-          onClick={() => closeClickNav()}
-        >
+        <Nav className='mr-auto' onClick={() => closeClickNav()}>
           <Nav.Link as={NavLink} className='nav-link' to='/flight'>
             Flight
           </Nav.Link>
