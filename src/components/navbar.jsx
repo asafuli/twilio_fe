@@ -46,57 +46,36 @@ const ConnectedNavBar = props => {
           <Nav.Link as={NavLink} className='nav-link' to='/flight'>
             Flight
           </Nav.Link>
-          <Nav.Item as={NavLink} className='nav-item' to='/map'>
-            map
-          </Nav.Item>
-          <Nav.Link href='#features'>
-            <NavLink className='nav-link' to='/accomodation'>
-              Accomodation
-            </NavLink>
+          <Nav.Link as={NavLink} className='nav-link' to='/accomodation'>
+            Accomodation
           </Nav.Link>
-          <Nav.Link href='#features'>
-            <div>
-              <NavLink className='nav-link' to='/map'>
-                Map
-              </NavLink>
-            </div>
+          <Nav.Link as={NavLink} className='nav-link' to='/map'>
+            Map
           </Nav.Link>
-          <Nav.Link href='#features'>
-            <NavLink className='nav-link' to='/home'>
-              My Page
-            </NavLink>
+          <Nav.Link as={NavLink} className='nav-link' to='/home'>
+            My Page
           </Nav.Link>
-          <Nav.Link href='#features'>
-            <NavLink className='nav-link' to='/chat'>
-              Chat
-            </NavLink>
+          <Nav.Link as={NavLink} className='nav-link' to='/chat'>
+            Chat
           </Nav.Link>
         </Nav>
         {!props.loggedIn && (
-          <Nav>
-            <Nav.Link href='#deets'>
-              <NavLink className='nav-link' to='/login'>
-                Login
-              </NavLink>
+          <Nav className='mr-auto' onClick={() => closeClickNav()}>
+            <Nav.Link as={NavLink} className='nav-link' to='/login'>
+              Login
             </Nav.Link>
-            <Nav.Link href='#deets'>
-              <NavLink className='nav-link' to='/home'>
-                Register
-              </NavLink>
+            <Nav.Link as={NavLink} className='nav-link' to='/home'>
+              Register
             </Nav.Link>
           </Nav>
         )}
         {props.loggedIn && (
-          <Nav>
-            <Nav.Link href='#deets'>
-              <navLink className='nav-link active' to='/home'>
-                {props.user}
-              </navLink>
+          <Nav className='mr-auto' onClick={() => closeClickNav()}>
+            <Nav.Link as={NavLink} className='nav-link active' to='/home'>
+              {props.user}
             </Nav.Link>
-            <Nav.Link href='#deets'>
-              <NavLink className='nav-link' to='/Logout'>
-                Logout
-              </NavLink>
+            <Nav.Link as={NavLink} className='nav-link' to='/Logout'>
+              Logout
             </Nav.Link>
           </Nav>
         )}
