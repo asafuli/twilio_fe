@@ -3381,7 +3381,7 @@ body:after {
   margin-right: 10rem;
 }
 
-.chat-wrapper {
+/* .chat-wrapper {
   display: flex;
   flex-flow: column wrap;
   align-items: center;
@@ -3454,7 +3454,7 @@ body:after {
 
 .chat-type-msg {
   background: skyblue !important;
-  width: 70rem !important;
+  width: 100% !important;
   opacity: 0.6 !important;
   border: black solid 2px !important;
   margin: 10px !important;
@@ -3478,4 +3478,4 @@ body:after {
   font-weight: bold;
   font-size: 2em;
   text-align: center;
-}
+} */
