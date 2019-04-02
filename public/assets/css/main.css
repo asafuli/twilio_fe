@@ -3397,7 +3397,7 @@ body:after {
 
   background: aliceblue;
   opacity: 0.5;
-  max-width: 70%;
+  width: 70%;
   height: auto;
   border: black solid 0.5rem;
   padding: 2rem;
