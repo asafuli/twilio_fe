@@ -3072,6 +3072,11 @@ table.alt tbody tr td {
 body {
   background-color: #1e1f23;
   padding-top: 8rem;
+  background-image: url(../../images/bg.jpg);
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 body.is-loading:after {
@@ -3093,12 +3098,12 @@ body:after {
   background-attachment: fixed;
   background-position: center;
   background-repeat: no-repeat;
-  background-size: cover;
+  background-size: 100% 100%;
   position: fixed;
   display: block;
   top: 0;
   left: 0;
-  height: auto;
+  height: 100%;
   width: 100%;
   z-index: -1;
   visibility: visible;
