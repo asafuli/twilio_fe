@@ -3381,12 +3381,14 @@ body:after {
   margin-right: 10rem;
 }
 
-/* .chat-wrapper {
-  display: flex;
+.chat-wrapper {
+  /* display: flex;
   flex-flow: column wrap;
-  align-items: center;
-  max-width: 70%;
+  align-items: center; */
   height: auto;
+  max-width: 70%;
+  margin-right: 15%;
+  margin-left: 15%;
 }
 
 .chat-box {
@@ -3394,13 +3396,10 @@ body:after {
   flex-flow: column wrap;
   align-items: flex-start;
   justify-content: flex-start;
-
+  padding: 2rem;
   background: aliceblue;
   opacity: 0.5;
-  width: 70%;
-  height: auto;
   border: black solid 0.5rem;
-  padding: 2rem;
 }
 
 .chat-header {
@@ -3469,8 +3468,8 @@ body:after {
   background: cyan;
   border: black solid 2px;
   padding: 5px;
-  width: 10rem;
-  height: 1.5rem;
+  /* width: 10rem;
+  height: 1.5rem; */
   margin: 10px;
 
   line-height: 100px;
@@ -3478,4 +3477,4 @@ body:after {
   font-weight: bold;
   font-size: 2em;
   text-align: center;
-} */
+}
